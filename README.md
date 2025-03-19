@@ -23,7 +23,8 @@ Genera **dos archivos CSV**:
 
 - Python 3.10 o superior
 - pip
-- (Recomendado) Virtualenv
+- Recomendado: Virtualenv
+- GitHub Actions (si quieres CI/CD automático)
 
 ---
 
@@ -35,7 +36,7 @@ Genera **dos archivos CSV**:
    cd sage2odoo
    ```
 
-2. Crea un entorno virtual:
+2. Crea y activa el entorno virtual:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
@@ -63,7 +64,12 @@ sage2odoo/
 │   ├── main.py
 │   ├── parser_facturas.py
 │   └── parser_asientos.py
-├── requirements.txt
+├── tests/                # Pruebas unitarias e integración
+│   ├── test_parser_asientos.py
+│   └── test_validador_asientos.py
+├── .github/workflows/    # CI/CD para GitHub Actions
+│   └── ci.yml
+├── requirements.txt      # Dependencias del proyecto
 └── README.md
 ```
 
@@ -91,33 +97,82 @@ sage2odoo/
 
 ### 📂 facturas_odoo.csv
 
-| Campo                | Descripción                        |
-|----------------------|------------------------------------|
-| Fecha Factura        | Fecha de emisión de la factura     |
-| Fecha Vencimiento    | Fecha de vencimiento de la factura |
-| Número Factura       | Nº de factura                     |
-| Partner              | Cliente o Proveedor               |
-| Diario               | Compras / Ventas / Abono          |
-| Base Imponible       | Base imponible de la factura       |
-| IVA Cuota            | Importe del IVA                   |
-| Tipo IVA             | % de IVA aplicado                 |
-| Importe Total        | Total de la factura (base + IVA)  |
-| Concepto / Descripción | Descripción de la factura        |
-| Centro de Coste      | Si aplica                         |
+| Campo                  | Descripción                          |
+|------------------------|--------------------------------------|
+| Fecha Factura          | Fecha de emisión de la factura       |
+| Fecha Vencimiento      | Fecha de vencimiento de la factura   |
+| Número Factura         | Nº de factura                       |
+| Partner                | Cliente o Proveedor                 |
+| Diario                 | Compras / Ventas / Abono            |
+| Base Imponible         | Base imponible de la factura         |
+| IVA Cuota              | Importe del IVA                     |
+| Tipo IVA               | % de IVA aplicado                   |
+| Importe Total          | Total de la factura (base + IVA)    |
+| Concepto / Descripción | Descripción de la factura           |
+| Centro de Coste        | Si aplica                           |
 
 ---
 
 ### 📂 asientos_odoo.csv
 
-| Campo                | Descripción                      |
-|----------------------|----------------------------------|
-| Fecha Asiento        | Fecha del asiento contable       |
-| Número Asiento       | Nº de asiento                   |
-| Cuenta Contable      | Código de la cuenta contable     |
-| Descripción          | Descripción del asiento          |
-| Debe                | Importe en el debe               |
-| Haber               | Importe en el haber              |
-| Centro de Coste      | Si aplica                       |
+| Campo             | Descripción                      |
+|-------------------|----------------------------------|
+| Fecha Asiento     | Fecha del asiento contable       |
+| Número Asiento    | Nº de asiento                   |
+| Cuenta Contable   | Código de la cuenta contable     |
+| Descripción       | Descripción del asiento          |
+| Debe              | Importe en el debe               |
+| Haber             | Importe en el haber              |
+| Centro de Coste   | Si aplica                       |
+
+---
+
+## ✅ Ejecutar los tests en local
+
+Asegúrate de tener el entorno virtual activado:
+```bash
+source venv/bin/activate
+pytest
+```
+
+### ¿Qué validan los tests?
+- **test_parser_asientos.py**: Comprueba que el parser interpreta correctamente los XML.
+- **test_validador_asientos.py**: Verifica que los asientos cuadran (Debe = Haber) para todos los asientos contables del CSV.
+
+---
+
+## ✅ CI/CD con GitHub Actions
+
+El repositorio incluye una pipeline (`.github/workflows/ci.yml`) que ejecuta automáticamente los tests cada vez que se hace un push o pull request sobre la rama `develop`.
+
+```yaml
+name: CI Sage2Odoo
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+      - name: Run tests
+        run: pytest
+```
 
 ---
 
@@ -127,19 +182,15 @@ sage2odoo/
 ```bash
 python -m scripts.main
 ```
-➡️ Asegúrate de lanzar el script desde la raíz del proyecto usando el flag `-m`.
+➡️ Lanza el script desde la raíz del proyecto usando `-m`.
 
 ### OSError: Cannot save file into a non-existent directory: 'output'
 ```bash
 mkdir output
 ```
-➡️ Crea la carpeta `output` antes de ejecutar el script si no existe.
 
-### ModuleNotFoundError: No module named 'pandas'
-```bash
-pip install -r requirements.txt
-```
-➡️ Activa tu entorno virtual antes de instalar dependencias.
+### Error en los tests de validación
+➡️ Revisa el CSV de asientos para ver por qué hay descuadres. Normalmente hay un problema en el XML de origen o en la asignación Debe/Haber.
 
 ---
 
@@ -147,7 +198,7 @@ pip install -r requirements.txt
 
 - Integración vía API con Odoo para automatizar la carga de los CSV.
 - Asignación dinámica de centros de coste según departamentos o proyectos.
-- Validaciones automáticas y tests en GitHub Actions.
+- Validaciones automáticas y tests adicionales en GitHub Actions.
 - Soporte para archivos adicionales de Sage como BABEL.
 
 ---
