@@ -1,0 +1,9 @@
+
+<root xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+    <rs:data>
+        <z:row Asiento="1" FechaAsiento="2024-01-01" CodigoCuenta="7000001"
+               Comentario="VENTA TEST" ImporteAsiento="500.00" CargoAbono="D"/>
+        <z:row Asiento="1" FechaAsiento="2024-01-01" CodigoCuenta="4300001"
+               Comentario="VENTA TEST" ImporteAsiento="500.00" CargoAbono="H"/>
+    </rs:data>
+</root>

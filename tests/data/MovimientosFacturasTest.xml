@@ -1,0 +1,8 @@
+
+<root xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+    <rs:data>
+        <z:row NumeroFactura="FAC001" FechaFactura="2024-01-01" CodigoCliente="CLIENTE01"
+               BaseImponible="1000.00" IVA="210.00" TotalFactura="1210.00"
+               Descripcion="FACTURA TEST"/>
+    </rs:data>
+</root>

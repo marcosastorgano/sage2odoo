@@ -23,7 +23,7 @@ def parse_asientos(xml_path):
             'Haber': importe if cargo_abono == 'H' else 0.0,
             'Centro de Coste': row.attrib.get('CodigoDepartamento', '')
         }
-        
+
         asientos.append(asiento)
 
     df_asientos = pd.DataFrame(asientos)
@@ -31,9 +31,9 @@ def parse_asientos(xml_path):
     return df_asientos
 
 
-def run_asientos_parser(input_folder, output_folder):
-    asientos_file = os.path.join(input_folder, 'MovimientosE244A1FB-DEA2-4139-9CF8-C95CBCC555A5.XML')
-    
+def run_asientos_parser(input_folder, output_folder, filename='MovimientosAsientosTest.xml'):
+    asientos_file = os.path.join(input_folder, filename)
+
     df_asientos = parse_asientos(asientos_file)
 
     output_file = os.path.join(output_folder, 'asientos_odoo.csv')

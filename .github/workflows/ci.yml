@@ -28,5 +28,13 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
-      - name: Run tests
-        run: PYTHONPATH=. pytest
+      - name: Preparar data/ con XML de prueba
+        run: |
+          mkdir -p data
+          cp -r tests/data/* data/
+
+      - name: Ejecutar parser
+        run: python -m scripts.main
+
+      - name: Ejecutar tests
+        run: pytest
