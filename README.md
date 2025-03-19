@@ -6,16 +6,21 @@ Parser en Python para convertir los archivos XML exportados desde **Sage Despach
 ---
 
 ## ✅ Descripción
-Este script procesa los datos de:
-- **Facturas** (`MovimientosFacturas*.XML`)
-- **IVA** (`MovimientosIva*.XML`)
-- **Asientos contables** (`Movimientos*.XML`)
 
-Genera un CSV consolidado que puede importarse en Odoo para mejorar la gestión analítica y el control de costes.
+Este proyecto automatiza la conversión de los datos contables de **Sage Despachos** a un formato compatible con **Odoo**.
+
+Actualmente el script procesa:
+- **Facturas** (`MovimientosFacturas*.XML` + `MovimientosIva*.XML` + `Movimientos*.XML`)
+- **Asientos Contables** (`Movimientos*.XML`)
+
+Genera **dos archivos CSV**:
+- `facturas_odoo.csv`
+- `asientos_odoo.csv`
 
 ---
 
 ## ✅ Requisitos Previos
+
 - Python 3.10 o superior
 - pip
 - (Recomendado) Virtualenv
@@ -24,19 +29,19 @@ Genera un CSV consolidado que puede importarse en Odoo para mejorar la gestión 
 
 ## ✅ Instalación y Setup Inicial
 
-1. **Clona el repositorio**:
+1. Clona el repositorio:
    ```bash
    git clone git@github.com:TUUSUARIO/sage2odoo.git
    cd sage2odoo
    ```
 
-2. **Crea un entorno virtual** (recomendado):
+2. Crea un entorno virtual:
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
 
-3. **Instala las dependencias**:
+3. Instala las dependencias:
    ```bash
    pip install -r requirements.txt
    ```
@@ -48,11 +53,16 @@ Genera un CSV consolidado que puede importarse en Odoo para mejorar la gestión 
 ```
 sage2odoo/
 ├── data/                 # XML de entrada desde Sage
-├── output/               # CSV generado para Odoo
+│   ├── MovimientosFacturas*.XML
+│   ├── MovimientosIva*.XML
+│   └── Movimientos*.XML
+├── output/               # CSV generados para Odoo
+│   ├── facturas_odoo.csv
+│   └── asientos_odoo.csv
 ├── scripts/              # Código fuente
-│   ├── main.py           # Script principal
-│   ├── parser_facturas.py # Parser de facturas
-│   └── parser_asientos.py # Parser de asientos (opcional)
+│   ├── main.py
+│   ├── parser_facturas.py
+│   └── parser_asientos.py
 ├── requirements.txt
 └── README.md
 ```
@@ -61,24 +71,25 @@ sage2odoo/
 
 ## ✅ Cómo ejecutar el parser
 
-1. Coloca los XML en la carpeta `data/`.
-   - `MovimientosFacturasE244A1FB-...XML`
-   - `MovimientosIvaE244A1FB-...XML`
-   - `MovimientosE244A1FB-...XML`
+1. Coloca los XML en la carpeta `data/`:
+   - `MovimientosFacturasE244A1FB-....XML`
+   - `MovimientosIvaE244A1FB-....XML`
+   - `MovimientosE244A1FB-....XML`
 
-2. Lanza el parser:
+2. Lanza el parser desde la raíz del proyecto:
    ```bash
    python -m scripts.main
    ```
 
-3. El resultado estará en la carpeta `output/` con el nombre:
-   ```
-   facturas_odoo.csv
-   ```
+3. Se generarán **dos archivos CSV** en la carpeta `output/`:
+   - `facturas_odoo.csv`
+   - `asientos_odoo.csv`
 
 ---
 
-## ✅ Formato del CSV generado
+## ✅ Formato de los CSV generados
+
+### 📂 facturas_odoo.csv
 
 | Campo                | Descripción                        |
 |----------------------|------------------------------------|
@@ -91,40 +102,58 @@ sage2odoo/
 | IVA Cuota            | Importe del IVA                   |
 | Tipo IVA             | % de IVA aplicado                 |
 | Importe Total        | Total de la factura (base + IVA)  |
-| Concepto / Descripción | Descripción del asiento o factura |
-| Centro de Coste      | Si aplica, se puede completar     |
+| Concepto / Descripción | Descripción de la factura        |
+| Centro de Coste      | Si aplica                         |
+
+---
+
+### 📂 asientos_odoo.csv
+
+| Campo                | Descripción                      |
+|----------------------|----------------------------------|
+| Fecha Asiento        | Fecha del asiento contable       |
+| Número Asiento       | Nº de asiento                   |
+| Cuenta Contable      | Código de la cuenta contable     |
+| Descripción          | Descripción del asiento          |
+| Debe                | Importe en el debe               |
+| Haber               | Importe en el haber              |
+| Centro de Coste      | Si aplica                       |
 
 ---
 
 ## ✅ Troubleshooting
 
-**ModuleNotFoundError: No module named 'scripts'**
+### ModuleNotFoundError: No module named 'scripts'
 ```bash
 python -m scripts.main
 ```
-➡️ Lanza siempre desde la raíz del proyecto usando el flag `-m`.
+➡️ Asegúrate de lanzar el script desde la raíz del proyecto usando el flag `-m`.
 
-**ModuleNotFoundError: No module named 'pandas'**
-```bash
-pip install -r requirements.txt
-```
-➡️ Asegúrate de tener el entorno virtual activo.
-
-**OSError: Cannot save file into a non-existent directory**
+### OSError: Cannot save file into a non-existent directory: 'output'
 ```bash
 mkdir output
 ```
-➡️ Crea la carpeta `output` antes de lanzar el script si no existe.
+➡️ Crea la carpeta `output` antes de ejecutar el script si no existe.
+
+### ModuleNotFoundError: No module named 'pandas'
+```bash
+pip install -r requirements.txt
+```
+➡️ Activa tu entorno virtual antes de instalar dependencias.
 
 ---
 
 ## ✅ Mejoras futuras
-- Integración vía API con Odoo para subir el CSV automáticamente.
-- Asignación de centros de coste dinámicos según reglas personalizadas.
-- Mejora de validación de datos (tests unitarios).
-- Adaptación para nuevas versiones de Sage o formatos BABEL.
+
+- Integración vía API con Odoo para automatizar la carga de los CSV.
+- Asignación dinámica de centros de coste según departamentos o proyectos.
+- Validaciones automáticas y tests en GitHub Actions.
+- Soporte para archivos adicionales de Sage como BABEL.
 
 ---
 
 ## ✅ Licencia
+
 MIT License
+
+---
