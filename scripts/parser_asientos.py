@@ -12,14 +12,15 @@ def parse_asientos(xml_path):
 
     for row in data_node:
         importe = float(row.attrib.get('ImporteAsiento', 0))
-        
+        cargo_abono = row.attrib.get('CargoAbono', '').strip().upper()
+
         asiento = {
             'Fecha Asiento': row.attrib.get('FechaAsiento'),
             'Número Asiento': row.attrib.get('Asiento'),
             'Cuenta Contable': row.attrib.get('CodigoCuenta'),
             'Descripción': row.attrib.get('Comentario'),
-            'Debe': importe if importe > 0 else 0.0,
-            'Haber': abs(importe) if importe < 0 else 0.0,
+            'Debe': importe if cargo_abono == 'D' else 0.0,
+            'Haber': importe if cargo_abono == 'H' else 0.0,
             'Centro de Coste': row.attrib.get('CodigoDepartamento', '')
         }
         
