@@ -1,3 +1,4 @@
+
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
@@ -30,12 +31,9 @@ def parse_asientos(xml_path):
     return df_asientos
 
 
-def run_parser(asientos_path, output_folder, asientos_file='MovimientosAsientosTest.xml'):
-    # Este es el path del XML ya resuelto que le pasa main.py
+def run_parser(asientos_path, output_folder, output_file_name='asientos_odoo.csv'):
     df_asientos = parse_asientos(asientos_path)
 
-    # Generamos el nombre del CSV de salida, igual que en facturas
-    output_file_name = asientos_file.replace('.xml', '.csv').replace('.XML', '.csv')
     output_file = os.path.join(output_folder, output_file_name)
 
     df_asientos.to_csv(output_file, sep=';', index=False, encoding='utf-8')
