@@ -1,4 +1,3 @@
-
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
@@ -28,11 +27,13 @@ def parse_facturas(xml_path):
     return df_facturas
 
 
-def run_parser(input_folder, output_folder, facturas_file='MovimientosFacturasTest.xml'):
-    facturas_path = os.path.join(input_folder, facturas_file)
-
+def run_parser(facturas_path, output_folder, facturas_file='MovimientosFacturasTest.xml'):
+    # Ya no concatenamos input_folder aquí porque el path viene completo
     df_facturas = parse_facturas(facturas_path)
 
-    output_file = os.path.join(output_folder, 'facturas_odoo.csv')
+    # Usamos el nombre de facturas_file para construir el nombre del CSV de salida
+    output_file_name = facturas_file.replace('.xml', '.csv').replace('.XML', '.csv')
+    output_file = os.path.join(output_folder, output_file_name)
+
     df_facturas.to_csv(output_file, sep=';', index=False, encoding='utf-8')
     print(f"Exportado CSV a: {output_file}")
