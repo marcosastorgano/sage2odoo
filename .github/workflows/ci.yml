@@ -34,7 +34,11 @@ jobs:
           cp -r tests/data/* data/
 
       - name: Ejecutar parser
-        run: python -m scripts.main
-
+        run: |
+          python -m scripts.main \
+            --input_folder data \
+            --output_folder output \
+            --facturas_file tests/data/MovimientosFacturasTest.xml \
+            --asientos_file tests/data/MovimientosAsientosTest.xml
       - name: Ejecutar tests
         run: pytest
