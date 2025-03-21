@@ -1,3 +1,4 @@
+
 name: Sage2Odoo CI
 
 on:
@@ -26,13 +27,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Crear carpeta output si no existe
+        run: mkdir -p output
+
       - name: Ejecutar parser para generar los CSV
         run: |
-          python -m scripts.main \
-            --input_folder tests/data \
-            --output_folder output \
-            --facturas_file MovimientosFacturasTest.xml \
-            --asientos_file MovimientosAsientosTest.xml
+          python -m scripts.main             --input_folder tests/data             --output_folder output             --facturas_file MovimientosFacturasTest.xml             --asientos_file MovimientosAsientosTest.xml
+
+      - name: Ver contenido de la carpeta output después del parser
+        run: ls -la output
 
       - name: Ejecutar tests con pytest
         run: pytest
