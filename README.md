@@ -1,61 +1,73 @@
 
-# Sage2Odoo XML Parser
+# Sage2Odoo
 
-Automatiza la conversión de los datos contables de **Sage Despachos** a un formato compatible con **Odoo**.
+Este proyecto permite convertir datos contables de Sage a Odoo, incluyendo la transformación de facturas y asientos contables, aplicando mapeos de cuentas para asegurar la compatibilidad con el Plan General Contable Español (PGCE) en Odoo.
 
-## ✅ Qué hace
-Procesa:
-- **Facturas** (`MovimientosFacturas*.XML` + `MovimientosIva*.XML` + `Movimientos*.XML`)
-- **Asientos contables** (`Movimientos*.XML`)
+## ✅ Funcionalidades principales
 
-Genera **dos archivos CSV**:
-- `facturas_odoo.csv`
-- `asientos_odoo.csv`
+- Parser de facturas desde XML de Sage a CSV compatible con Odoo.
+- Parser de asientos contables desde XML de Sage a CSV compatible con Odoo.
+- Mapeo de códigos de cuentas Sage a Odoo mediante el fichero `mappings/equivalencias_sage_odoo.csv`.
+- Generación automática de informes de cuentas no mapeadas para control y revisión.
 
-## ✅ Instalación y Setup Inicial
-1. Clona el repo:
-    ```bash
-    git clone git@github.com:TUUSUARIO/sage2odoo.git
-    cd sage2odoo
-    ```
+## 📝 Informe de Cuentas no Mapeadas
 
-2. Crea un entorno virtual:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+Durante el procesamiento de los asientos contables, el sistema aplica un mapeo de códigos de cuentas desde Sage a Odoo según el fichero de equivalencias `mappings/equivalencias_sage_odoo.csv`.
 
-3. Instala las dependencias:
-    ```bash
-    pip install -r requirements.txt
-    ```
+Si el código Sage **no tiene equivalencia** definida, el proceso:
+- Mantiene el código Sage original en la exportación de asientos.
+- Registra esa cuenta en un informe para revisión manual.
 
-## ✅ Cómo ejecutar el parser (CLI)
+### 📂 Ubicación del informe
+El informe se genera automáticamente en la siguiente ruta:
+```
+output/reportes/cuentas_no_mapeadas.csv
+```
 
-Coloca los XML de Sage en la carpeta que tú quieras (ejemplo `data/`). Luego ejecuta:
+### 📄 Contenido del informe
+El archivo contiene una única columna:
+```
+Cuenta Sage sin mapeo
+2040000
+4300001
+7000001
+```
+
+### ✅ ¿Qué hacer con el informe?
+- Revisar el listado después de cada ejecución.
+- Evaluar si es necesario:
+  - **Completar el mapeo** en `mappings/equivalencias_sage_odoo.csv`.
+  - **Crear nuevas cuentas** en Odoo y actualizar el mapeo en consecuencia.
+- Reejecutar el proceso para validar que no queden cuentas sin mapear.
+
+### ⚠️ Notas
+- Las cuentas sin equivalencia **no detienen el proceso**, pero deben gestionarse para mantener la consistencia contable.
+
+## 🚀 Cómo ejecutar
 
 ```bash
-python3 -m scripts.main \
-  --input_folder data \
-  --output_folder output \
-  --facturas_file MovimientosFacturasE244A1FB-DEA2-4139-9CF8-C95CBCC555A5.XML \
-  --asientos_file MovimientosE244A1FB-DEA2-4139-9CF8-C95CBCC555A5.XML
+python -m scripts.main   --input_folder tests/data   --output_folder output   --facturas_file MovimientosFacturasTest.xml   --asientos_file MovimientosAsientosTest.xml
 ```
 
-Los CSV se exportarán en `output/`:
-- `facturas_odoo.csv`
-- `asientos_odoo.csv`
+## ✅ Estructura del proyecto
 
-## ✅ Estructura del Proyecto
 ```
 sage2odoo/
-├── data/                 # XML de entrada desde Sage
-├── output/               # CSV generados para Odoo
-├── scripts/              # Código fuente
+├── mappings/
+│   └── equivalencias_sage_odoo.csv
+├── output/
+│   ├── facturas_odoo.csv
+│   ├── asientos_odoo.csv
+│   └── reportes/
+│       └── cuentas_no_mapeadas.csv
+├── scripts/
 │   ├── main.py
+│   ├── parser_asientos.py
 │   ├── parser_facturas.py
-│   └── parser_asientos.py
-├── tests/                # Pruebas unitarias
-├── requirements.txt
-└── README.md
+│   └── mapper.py
+└── tests/
+    ├── test_mapper.py
+    ├── test_parser_asientos.py
+    └── test_validador_asientos.py
 ```
+
