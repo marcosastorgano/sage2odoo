@@ -1,0 +1,629 @@
+Codigo_Sage;Código Sage Recortado;Descripcion_Sage;Codigo_Odoo;Descripcion_Odoo
+1000000;100000;CAPITAL SOCIAL;100000;Capital social
+1010000;101000;Fondo social;101000;Fondo social
+1020000;102000;Capital;102000;Capital
+1030000;103000;Socios por desembolsos no exigidos, capital social;103000;Socios por desembolsos no exigidos, capital social
+1034000;103400;Socios por desembolsos no exigidos,capital pdte.in;103400;Socios por desembolsos no exigidos, capital pendiente de inscripción
+1040000;104000;Socios por aportaciones no diner.pdtes,capital soc;104000;Socios por aportaciones no dinerarias pendientes, capital social
+1044000;104400;Socios por aportaciones no diner.pdtes inscripción;104400;Socios por aportaciones no dinerarias pendientes, capital pendiente de inscripción
+1080000;108000;Acciones/particip. propias en situaciones espec.;108000;Acciones o participaciones propias en situaciones especiales
+1090000;109000;Acciones/particip. propias para reduc. de capital;109000;Acciones o participaciones propias para reducción de capital
+1100000;110000;Prima de emisión o asunción;110000;Prima de emisión o asunción
+1120000;112000;Reserva legal;112000;Reserva legal
+1130000;113000;Reservas voluntarias;113000;Reservas voluntarias
+1140000;114000;Reservas para acciones o particip de la Soc.domin;114000;Reservas para acciones o participaciones de la sociedad dominante
+1141000;114100;Reservas estatutarias;114100;Reservas estatutarias
+1142000;114200;Reserva por capital amortizado;114200;Reserva por capital amortizado
+1144000;114400;Reserva por acciones propias aceptadas en garantía;114400;Reservas por acciones propias aceptadas en garantía
+1145000;114500;Reserva Revalorización ley 12/2012;;
+1180000;118000;Aportaciones de socios o propietarios;118000;Aportaciones de socios o propietarios
+1190000;119000;Diferencias por ajuste del capital a euros;119000;Diferencias por ajuste del capital a euros
+1200000;120000;Remanente;120000;Remanente
+1210000;121000;Resultados negativos de ejercicios anteriores;121000;Resultados negativos de ejercicios anteriores
+1290000;129000;Resultado del ejercicio;129000;Resultado del ejercicio
+1300000;130000;Subvenciones oficiales de capital;130000;Subvenciones oficiales de capital
+1301000;130100;Derechos emisión asignados, GEI;;
+1310000;131000;Donaciones y legados de capital;131000;Donaciones y legados de capital
+1320000;132000;Otras subvenciones, donaciones y legados;132000;Otras subvenciones, donaciones y legados
+1370000;137000;Ingre.fisc.difere.permanentes distri. varios ejer.;137000;Ingresos fiscales por diferencias permanentes a distribuir en varios ejercicios
+1371000;137100;Ingre.fisc.deduc. y bonifi. a distri. varios ejer.;137100;Ingresos fiscales por deducciones y bonificaciones a distribuir en varios ejercicios
+1410000;141000;Provisión para impuestos;141000;Provisión para impuestos
+1420000;142000;Provisión para otras responsabilidades;142000;Provisión para otras responsabilidades
+1430000;143000;Provisión desmante., retiro o rehabili. inmovil.;143000;Provisión por desmantelamiento, retiro o rehabilitación del inmovilizado
+1450000;145000;Provisión para actuaciones medioambientales;145000;Provisión para actuaciones medioambientales
+1490000;149000;Prov. derechos emisión gases efecto invernadero;;
+1500000;150000;Acciones o partic.a L/P consideradas como pasivo;150000;Acciones o participaciones consideradas como pasivos financieros
+1533000;153300;Desembolsos no exigidos, grupo;153300;Desembolsos no exigidos, empresas del grupo
+1534000;153400;Desembolsos no exigidos, asoc.;153400;Desembolsos no exigidos, empresas asociadas
+1535000;153500;Desembolsos no exigidos, otras vinc.;153500;Desembolsos no exigidos, otras partes vinculadas
+1536000;153600;Otros desembolsos no exigidos;153600;Otros desembolsos no exigidos
+1543000;154300;Aportaciones no dinerarias pendientes, grupo;154300;Aportaciones no dinerarias pendientes, empresas del grupo
+1544000;154400;Aportaciones no dinerarias pendientes, asoc.;154400;Aportaciones no dinerarias pendientes, empresas asociadas
+1545000;154500;Aportaciones no dinerarias pendientes, otras vinc.;154500;Aportaciones no dinerarias pendientes, otras partes vinculadas
+1546000;154600;Otras aportaciones no dinerarias pendientes;154600;Otras aportaciones no dinerarias pendientes
+1603000;160300;Deudas a L/P con entidades de crédito, grupo;160300;Deudas con entidades de crédito vinculadas, empresas del grupo
+1604000;160400;Deudas a L/P con entidades de crédito, asoc.;160400;Deudas con entidades de crédito vinculadas, empresas asociadas
+1605000;160500;Deudas a L/P con otras entidades de crédito vincu.;160500;Deudas con otras entidades de crédito vinculadas
+1613000;161300;Proveedores de inmovilizado a L/P, grupo;161300;Proveedores de inmovilizado, empresas del grupo
+1614000;161400;Proveedores de inmovilizado a L/P, asoc.;161400;Proveedores de inmovilizado, empresas asociadas
+1615000;161500;Proveedores de inmovilizado a L/P, otras vinc.;161500;Proveedores de inmovilizado, otras partes vinculadas
+1623000;162300;Acreedores arrendamiento financiero a L/P, grupo;162300;Acreedores por arrendamiento financiero, empresas de grupo
+1624000;162400;Acreedores arrendamiento financiero a L/P, asoc.;162400;Acreedores por arrendamiento financiero, empresas asociadas
+1625000;162500;Acreedores arrendamiento finan a L/P, otras vinc.;162500;Acreedores por arrendamiento financiero, otras partes vinculadas
+1633000;163300;Otras deudas a L/P, empresas grupo;163300;Otras deudas, empresas del grupo
+1634000;163400;Otras deudas a largo plazo, empresas asoc.;163400;Otras deudas, empresas asociadas
+1635000;163500;Otras deudas a L/P, otras partes vinc.;163500;Otras deudas, con otras partes vinculadas
+1635001;163500;PRESTAMO SOCIO MARCOS ASTORGANO;163500;Otras deudas, con otras partes vinculadas
+1700000;170000;Deudas a L/P con entidades de crédito;170000;Deudas con entidades de crédito
+1700001;170000;CREDITO KUTXABANK 69256;170000;Deudas con entidades de crédito
+1710000;171000;Deudas a L/P;171000;Deudas
+1720000;172000;Deudas a L/P transform. en subvenc., donac.y leg.;172000;Deudas transformables en subvenciones, donaciones y legados
+1730000;173000;Proveedores de inmovilizado a L/P;173000;Proveedores de inmovilizado
+1740000;174000;Acreedores por arrendamiento financiero a L/P;174000;Acreedores por arrendamiento financiero
+1750000;175000;Efectos a pagar a L/P;175000;Efectos a pagar
+1760000;176000;Pasivos por derivados financieros a L/P;176000;Pasivos por derivados financieros
+1770000;177000;Obligaciones y bonos ;177000;Obligaciones y bonos
+1790000;179000;Deudas representadas en otros valores negociables;179000;Deudas representadas en otros valores negociables
+1800000;180000;Fianzas recibidas a L/P;180000;Fianzas recibidas
+1810000;181000;Anticipos recibidos por ventas o prestac.serv. L/P;181000;Anticipos recibidos por ventas o prestaciones de servicios
+1850000;185000;Depósitos recibidos a L/P;185000;Depósitos recibidos
+1900000;190000;Acciones o participaciones emitidas;190000;Acciones o participaciones emitidas
+1920000;192000;Suscriptores de acciones;192000;Suscriptores de acciones
+1940000;194000;Capital emitido pendiente de inscripción;194000;Capital emitido pendiente de inscripción
+1950000;195000;Accion/partic.emitidas consideradas pasivos financ;195000;Acciones o participaciones emitidas consideradas como pasivos financieros
+1970000;197000;Suscriptores acciones consideradas pasivos financ;197000;Suscriptores de acciones consideradas como pasivos financieros
+1990000;199000;Acciones/partic.emitidas pasivos pdtes.inscripción;199000;Acciones o participaciones emitidas consideradas como pasivos financieros pendientes de inscripción
+2000000;200000;Investigación;200000;Investigación
+2010000;201000;Desarrollo;201000;Desarrollo
+2020000;202000;Concesiones administrativas;202000;Concesiones administrativas
+2030000;203000;Propiedad industrial;203000;Propiedad industrial
+2040000;204000;ADMINISTRACION LOTERIAS;;
+2050000;205000;Derechos de traspaso;205000;Derechos de traspaso
+2060000;206000;Aplicaciones informáticas;206000;Aplicaciones informáticas
+2070000;207000;Derechos emisión gases  efecto invernadero;;
+2071000;207100;Derechos emisión GEI, transferidos por el RENADE;;
+2072000;207200;Derechos emisión GEI, adq. o producidos empresa;;
+2090000;209000;Anticipos para inmovilizaciones intangibles;209000;Anticipos para inmovilizaciones intangibles
+2100000;210000;Terrenos y bienes naturales;210000;Terrenos y bienes naturales
+2110000;211000;Construcciones;211000;Construcciones
+2120000;212000;Instalaciones técnicas;212000;Instalaciones técnicas
+2130000;213000;Maquinaria;213000;Maquinaria
+2140000;214000;Utillaje;214000;Utillaje
+2150000;215000;Otras instalaciones;215000;Otras instalaciones
+2160000;216000;Mobiliario;216000;Mobiliario
+2170000;217000;Equipos para procesos de información;217000;Equipos para proceso de información
+2180000;218000;Elementos de transporte;218000;Elementos de transporte
+2190000;219000;Otro inmovilizado material;219000;Otro inmovilizado material
+2200000;220000;Inversiones en terrenos y bienes naturales;220000;Inversiones en terrenos y bienes naturales
+2210000;221000;Inversiones en construcciones;221000;Inversiones en construcciones
+2300000;230000;Adaptación de terrenos y bienes naturales;230000;Adaptación de terrenos y bienes naturales
+2310000;231000;Construcciones en curso;231000;Construcciones en curso
+2320000;232000;Instalaciones técnicas en montaje;232000;Instalaciones técnicas en montaje
+2330000;233000;Maquinaria en montaje;233000;Maquinaria en montaje
+2370000;237000;Equipos para procesos de información en montaje;237000;Equipos para procesos de información en montaje
+2390000;239000;Anticipos para inmovilizaciones materiales;239000;Anticipos para inmovilizaciones materiales
+2403000;240300;Participaciones a L/P en empresas del grupo;240300;Participaciones en empresas del grupo
+2404000;240400;Participaciones a L/P en empresas asociadas;240400;Participaciones en empresas asociadas
+2405000;240500;Participaciones a L/P en otras partes vinculadas;240500;Participaciones en otras partes vinculadas
+2413000;241300;Valores repres.deuda L/P de empresas del grupo;241300;Valores representativos de deuda de empresas del grupo
+2414000;241400;Valores repres. deuda  L/P de empresas asoc.;241400;Valores representativos de deuda de empresas asociadas
+2415000;241500;Valores repres. deuda  L/P de otras partes vinc.;241500;Valores representativos de deuda de otras partes vinculadas
+2423000;242300;Créditos a L/P a empresas del grupo;242300;Créditos a empresas del grupo
+2424000;242400;Créditos a L/P a empresas asociadas;242400;Créditos a empresas asociadas
+2425000;242500;Créditos a L/P a otras partes vinculadas;242500;Créditos a otras partes vinculadas
+2493000;249300;Desembolsos pdtes.participaciones a L/P, grupo;249300;Desembolsos pendientes sobre participaciones en empresas del grupo
+2494000;249400;Desembolsos pdtes.participaciones a L/P, asoc.;249400;Desembolsos pendientes sobre participaciones en empresas asociadas
+2495000;249500;Desembolsos pdtes.particip.a L/P, otras vinc.;249500;Desembolsos pendientes sobre participaciones en otras partes vinculadas
+2500000;250000;Inversiones finan. L/P instrumentos de patrimonio;250000;Inversiones financieras en instrumentos de patrimonio
+2510000;251000;Valores representativos de deuda a L/P;251000;Valores representativos de deuda
+2520000;252000;Créditos a L/P;252000;Créditos
+2530000;253000;Créditos a L/P por enajenación de inmovilizado;253000;Créditos por enajenación de inmovilizado
+2540000;254000;Créditos a L/P al personal;254000;Créditos al personal
+2550000;255000;Activos por derivados financieros a L/P;255000;Activos por derivados financieros
+2580000;258000;Imposiciones a L/P;258000;Imposiciones
+2590000;259000;Desembolsos pdtes.participaciones Patrim.Neto L/P;259000;Desembolsos pendientes sobre participaciones en el patrimonio neto
+2600000;260000;Fianzas constituidas a L/P;260000;Fianzas constituidas
+2600001;260000;FIANZA CONSTITUIDA ALQUILER;260000;Fianzas constituidas
+2650000;265000;Depósitos constituidos a L/P;265000;Depósitos constituidos
+2800000;280000;Amortización acumulada de investigación;280000;Amortización acumulada de investigación
+2801000;280100;Amortización acumulada de desarrollo;280100;Amortización acumulada de desarrollo
+2802000;280200;Amortización acumulada concesiones administrativas;280200;Amortización acumulada de concesiones administrativas
+2803000;280300;Amortización acumulada de propiedad industrial;280300;Amortización acumulada de propiedad industrial
+2805000;280500;Amortización acumulada de derechos de traspaso;280500;Amortización acumulada de derechos de traspaso
+2806000;280600;Amortización acumulada aplicaciones informáticas;280600;Amortización acumulada de aplicaciones informáticas
+2811000;281100;Amortización acumulada de construcciones;281100;Amortización acumulada de construcciones
+2812000;281200;Amortización acumulada de instalaciones técnicas;281200;Amortización acumulada de instalaciones técnicas
+2813000;281300;Amortización acumulada de maquinaria;281300;Amortización acumulada de maquinaria
+2814000;281400;Amortización acumulada de utillaje;281400;Amortización acumulada de utillaje
+2815000;281500;Amortización acumulada de otras instalaciones;281500;Amortización acumulada de otras instalaciones
+2816000;281600;Amortización acumulada de mobiliario;281600;Amortización acumulada de mobiliario
+2817000;281700;Amort.acum.de equipos para procesos de información;281700;Amortización acumulada de equipos para proceso de información
+2818000;281800;Amortización acumulada de elementos de transporte;281800;Amortización acumulada de elementos de transporte
+2819000;281900;Amortización acumulada otro inmovilizado material;281900;Amortización acumulada de otro inmovilizado material
+2820000;282000;Amortización acumulada inversiones inmobiliarias;282000;Amortización acumulada de las inversiones inmobiliarias
+2900000;290000;Deterioro de valor de investigación;290000;Deterioro del valor de investigación
+2901000;290100;Deterioro de valor de desarrollo;290100;Deterioro del valor de desarrollo
+2902000;290200;Deterioro de valor de concesiones administrativas;290200;Deterioro del valor de concesiones administrativas
+2903000;290300;Deterioro de valor de propiedad industrial;290300;Deterioro del valor de propiedad industrial
+2905000;290500;Deterioro de valor de derechos de traspaso;290500;Deterioro del valor de derechos de traspaso
+2906000;290600;Deterioro de valor de aplicaciones informáticas;290600;Deterioro del valor de aplicaciones informáticas
+2907000;290700;Deterioro de valor Derechos emisión GEI;;
+2910000;291000;Deterioro de valor de terrenos y bienes naturales;291000;Deterioro de valor de terrenos y bienes naturales
+2911000;291100;Deterioro de valor de construcciones;291100;Deterioro de valor de construcciones
+2912000;291200;Deterioro de valor de instalaciones técnicas;291200;Deterioro de valor de instalaciones técnicas
+2913000;291300;Deterioro de valor de maquinaria;291300;Deterioro de valor de maquinaria
+2914000;291400;Deterioro de valor de utillaje;291400;Deterioro de valor de utillaje
+2915000;291500;Deterioro de valor de otras instalaciones;291500;Deterioro de valor de otras instalaciones
+2916000;291600;Deterioro de valor de mobiliario;291600;Deterioro de valor de mobiliario
+2917000;291700;Deterioro valor equipos para proceso información;291700;Deterioro de valor de equipos para proceso de información
+2918000;291800;Deterioro de valor de elementos de transporte;291800;Deterioro de valor de elementos de transporte
+2919000;291900;Deterioro de valor de otro inmovilizado material;291900;Deterioro de valor de otro inmovilizado material
+2920000;292000;Det. de valor de terrenos y bienes nat. (inv.inm.);292000;Deterioro de valor de los terrenos y bienes naturales
+2921000;292100;Deterioro de valor de construcciones (inv.inm.);292100;Deterioro de valor de construcciones
+2933000;293300;Deterioro de valor de particip. a L/P en grupo;293300;Deterioro de valor de participaciones en empresas del grupo
+2934000;293400;Deterioro de valor de particip. a L/P en asoc.;293400;Deterioro de valor de participaciones en empresas asociadas
+2935000;293500;Deterioro valor particip.a L/P otras partes vinc.;293500;Deterioro de valor de participaciones a largo plazo en otras partes vinculadas
+2943000;294300;Deterioro de valores repres.deuda  a L/P, grupo;294300;Deterioro de valor de valores representativos de deuda de empresas del grupo
+2944000;294400;Deterioro valores repres. deuda a L/P de asoc.;294400;Deterioro de valor de valores representativos de deuda de empresas asociadas
+2945000;294500;Deterioro valores repres deuda  L/P de otras vinc.;294500;Deterioro de valor de valores representativos de deuda de otras partes vinculadas
+2953000;295300;Deterioro de valor de créditos a L/P a grupo;295300;Deterioro de valor de créditos a empresas del grupo
+2954000;295400;Deterioro de valor de créditos a L/P a asoc.;295400;Deterioro de valor de créditos a empresas asociadas
+2955000;295500;Deterioro de valor de créditos a L/P a otras vinc.;295500;Deterioro de valor de créditos a otras partes vinculadas
+2970000;297000;Deterioro de valor de valores repres.deuda L/P;297000;Deterioro de valor de valores representativos de deuda
+2980000;298000;Deterioro de valor de créditos a L/P;298000;Deterioro de valor de créditos
+3000000;300000;Mercaderías A;300000;Mercaderías A
+3010000;301000;Mercaderías B;301000;Mercaderías B
+3100000;310000;Materias primas A;310000;Materias primas A
+3110000;311000;Materias primas B;311000;Materias primas B
+3200000;320000;Elementos y conjuntos incorporables;320000;Elementos y conjuntos incorporables
+3210000;321000;Combustibles;321000;Combustibles
+3220000;322000;Repuestos;322000;Repuestos
+3250000;325000;Materiales diversos;325000;Materiales diversos
+3260000;326000;Embalajes;326000;Embalajes
+3270000;327000;Envases;327000;Envases
+3280000;328000;Material de oficina;328000;Material de oficina
+3300000;330000;Productos en curso A;330000;Productos en curso A
+3310000;331000;Productos en curso B;331000;Productos en curso B
+3400000;340000;Productos semiterminados A;340000;Productos semiterminados A
+3410000;341000;Productos semiterminados B;341000;Productos semiterminados B
+3500000;350000;Productos terminados A;350000;Productos terminados A
+3510000;351000;Productos terminados B;351000;Productos terminados B
+3600000;360000;Subproductos A;360000;Subproductos A
+3610000;361000;Subproductos B;361000;Subproductos B
+3650000;365000;Residuos A;365000;Residuos A
+3660000;366000;Residuos B;366000;Residuos B
+3680000;368000;Materiales recuperados A;368000;Materiales recuperados A
+3690000;369000;Materiales recuperados B;369000;Materiales recuperados B
+3900000;390000;Deterioro de valor de las mercaderías;390000;Deterioro de valor de las mercaderías
+3910000;391000;Deterioro de valor de las materias primas;391000;Deterioro de valor de las materias primas
+3920000;392000;Deterioro de valor de otros aprovisionamientos;392000;Deterioro de valor de otros aprovisionamientos
+3930000;393000;Deterioro de valor de los productos en curso;393000;Deterioro de valor de los productos en curso
+3940000;394000;Deterioro de valor de los productos semiterminados;394000;Deterioro de valor de los productos semiterminados
+3950000;395000;Deterioro de valor de los productos terminados;395000;Deterioro de valor de los productos terminados
+3960000;396000;Deter.valor subproductos,residuos y mat.recuperado;396000;Deterioro de valor de los subproductos, residuos y materiales recuperados
+4000000;400000;Proveedores (euros);400000;Proveedores (euros)
+4004000;400400;Proveedores (moneda extranjera);400400;Proveedores (moneda extranjera)
+4009000;400900;Proveedores,facturas pdtes.recibir o de formalizar;400900;Proveedores, facturas pendientes de recibir o de formalizar
+4010000;401000;Proveedores, efectos comerciales a pagar;401000;Proveedores, efectos comerciales a pagar
+4030000;403000;Proveedores, grupo (euros);403000;Proveedores, empresas del grupo (euros)
+4031000;403100;Efectos comerciales a pagar, grupo;403100;Efectos comerciales a pagar, empresas del grupo
+4034000;403400;Proveedores, grupo (moneda extranjera);403400;Proveedores, empresas del grupo (moneda extranjera)
+4036000;403600;Envases y embalajes a devolver proveedores, grupo;403600;Envases y embalajes a devolver a proveedores, empresas del grupo
+4039000;403900;Proveedores grupo,fras.pdtes.recibir/formalizar;403900;Proveedores, empresas del grupo, facturas pendientes de recibir o de formalizar
+4040000;404000;Proveedores, empresas asoc.;404000;Proveedores, empresas asociadas
+4050000;405000;Proveedores, otras partes vinc.;405000;Proveedores, otras partes vinculadas
+4060000;406000;Envases y embalajes a devolver a proveedores;406000;Envases y embalajes a devolver a proveedores
+4070000;407000;Anticipos a proveedores;407000;Anticipos a proveedores
+4100000;410000;Acreedores por prestaciones de servicios (euros);410000;Acreedores por prestaciones de servicios (euros)
+4100001;410000;PASO ASESORES, S.L.;410000;Acreedores por prestaciones de servicios (euros)
+4100002;410000;SANCHEZ GARDEAZABAL, C.B.;410000;Acreedores por prestaciones de servicios (euros)
+4100003;410000;REGISTRADORES MERCANTILES DE MADRID, C.B.;410000;Acreedores por prestaciones de servicios (euros)
+4100004;410000;BOLETIN OFICIAL DEL ESTADO-BORME;410000;Acreedores por prestaciones de servicios (euros)
+4104000;410400;Acreedores prestaciones de servicios (moneda extr);410400;Acreedores por prestaciones de servicios (moneda extranjera)
+4109000;410900;Acree.prest.servicios,fras.pdtes.recibir/formaliza;410900;Acreedores por prestaciones de servicios, facturas pendientes de recibir o de formalizar
+4110000;411000;Acreedores, efectos comerciales a pagar;411000;Acreedores, efectos comerciales a pagar
+4190000;419000;Acreedores por operaciones en común;419000;Acreedores por operaciones en común
+4300000;430000;Clientes (euros);430000;Clientes (euros)
+4304000;430400;Clientes (moneda extranjera);430400;Clientes (moneda extranjera)
+4309000;430900;Clientes, facturas pendientes de formalizar;430900;Clientes, facturas pendientes de recibir o de formalizar
+4310000;431000;Efectos comerciales en cartera;431000;Efectos comerciales en cartera
+4311000;431100;Efectos comerciales descontados;431100;Efectos comerciales descontados
+4312000;431200;Efectos comerciales en gestión de cobro;431200;Efectos comerciales en gestión de cobro
+4315000;431500;Efectos comerciales impagados;431500;Efectos comerciales impagados
+4320000;432000;"Clientes, operaciones de ""factoring""";432000;Clientes, operaciones de factoring
+4330000;433000;Clientes empresas del grupo (euros);433000;Clientes empresas del grupo (euros)
+4331000;433100;Efectos comerciales a cobrar, empresas grupo;433100;Efectos comerciales a cobrar, empresas del grupo
+4334000;433400;Clientes empresas grupo (moneda extranjera);433400;Clientes empresas del grupo (moneda extranjera)
+4336000;433600;Clientes empresas del grupo de dudoso cobro;433600;Clientes empresas del grupo de dudoso cobro
+4337000;433700;Envases y embalajes a devolver a clientes, grupo;433700;Envases y embalajes a devolver a clientes, empresas del grupo
+4339000;433900;Clientes empresas grupo,fras.pendientes formalizar;433900;Clientes empresas del grupo, facturas pendientes de formalizar
+4340000;434000;Clientes, empresas asoc.;434000;Clientes, empresas asociadas
+4350000;435000;Clientes, otras partes vinc.;435000;Clientes, otras partes vinculadas
+4360000;436000;Clientes de dudoso cobro;436000;Clientes de dudoso cobro
+4370000;437000;Envases y embalajes a devolver por clientes;437000;Envases y embalajes a devolver por clientes
+4380000;438000;Anticipos de clientes;438000;Anticipos de clientes
+4400000;440000;Deudores (euros);440000;Deudores (euros)
+4404000;440400;Deudores (moneda extranjera);440400;Deudores (moneda extranjera)
+4409000;440900;Deudores, facturas pendientes de formalizar;440900;Deudores, facturas pendientes de formalizar
+4410000;441000;Deudores, efectos comerciales en cartera;441000;Deudores, efectos comerciales en cartera
+4411000;441100;Deudores, efectos comerciales descontados;441100;Deudores, efectos comerciales descontados
+4412000;441200;Deudores, efectos comerciales en gestión de cobro;441200;Deudores, efectos comerciales en gestión de cobro
+4415000;441500;Deudores, efectos comerciales impagados;441500;Deudores, efectos comerciales impagados
+4460000;446000;Deudores de dudoso cobro;446000;Deudores de dudoso cobro
+4490000;449000;Deudores por operaciones en común;449000;Deudores por operaciones en común
+4600000;460000;Anticipos de remuneraciones;460000;Anticipos de remuneraciones
+4650000;465000;Remuneraciones pendientes de pago;465000;Remuneraciones pendientes de pago
+4700000;470000;HACIENDA PUBLICA DEUDORA POR IVA;470000;Hacienda Pública, deudora por IVA
+4708000;470800;HP, deudora por subvenciones concedidas;470800;Hacienda Pública, deudora por subvenciones concedidas
+4709000;470900;HP, deudora por devolución de impuestos;470900;Hacienda Pública, deudora por devolución de impuestos
+4710000;471000;Organismos de la Seguridad Social, deudores;471000;Organismos de la Seguridad Social, deudores
+4720000;472000;HACIENDA PUBLICA IVA SOPORTADO;472000;Hacienda Pública. IVA soportado
+4730000;473000;Hacienda Pública, retenciones y pagos a cuenta;473000;Hacienda Pública, retenciones y pagos a cuenta
+4740000;474000;Activos por diferencias temporarias deducibles;474000;Activos por diferencias temporarias deducibles
+4742000;474200;Derechos por deducciones y bonificac.pdtes.aplicar;474200;Derechos por deducciones y bonificaciones pendientes de aplicar
+4745000;474500;Crédito por pérdidas a compensar del ejercicio;474500;Crédito por pérdidas a compensar del ejercicio
+4750000;475000;Hacienda Pública, acreedora por IVA;475000;Hacienda Pública, acreedora por IVA
+4751000;475100;HP, acreedora por retenciones practicadas;475100;Hacienda Pública, acreedora por retenciones practicadas
+4751001;475100;H.P. ACREEDORA RETENCIONES ALQUILERES;475100;Hacienda Pública, acreedora por retenciones practicadas
+4751002;475100;H.P. ACREEDORA RETENCIONES PROFESIONALES;475100;Hacienda Pública, acreedora por retenciones practicadas
+4752000;475200;HP, acreedora por impuesto sobre sociedades;475200;Hacienda Pública, acreedora por impuesto sobre sociedades
+4758000;475800;HP, acreedora por subvenciones a reintegrar;475800;Hacienda Pública, acreedora por subvenciones a reintegrar
+4760000;476000;Organismos de la Seguridad Social, acreedores;476000;Organismos de la Seguridad Social, acreedores
+4770000;477000;Hacienda Pública, IVA repercutido;477000;Hacienda Pública. IVA repercutido
+4790000;479000;Pasivos por diferencias temporarias imponibles;479000;Pasivos por diferencias temporarias imponibles
+4800000;480000;Gastos anticipados;480000;Gastos anticipados
+4850000;485000;Ingresos anticipados;485000;Ingresos anticipados
+4900000;490000;Deterioro valor créditos por operaciones cciales.;490000;Deterioro de valor de créditos por operaciones comerciales
+4933000;493300;Deterioro valor créditos operac.cciales.con grupo;493300;Deterioro de valor de créditos por operaciones comerciales con empresas del grupo
+4934000;493400;Deterioro valor créditos operaci.cciales.con asoc.;493400;Deterioro de valor de créditos por operaciones comerciales con empresas asociadas
+4935000;493500;Deterioro val.créditos oper.cciales.con otras vinc;493500;Deterioro de valor de créditos por operaciones comerciales con otras partes vinculadas
+4994000;499400;Provisión por contratos onerosos;499400;Provisión por contratos onerosos
+4999000;499900;Provisión para otras operaciones comerciales;499900;Provisión para otras operaciones comerciales
+5000000;500000;Obligaciones y bonos a C/P;500000;Obligaciones y bonos a corto plazo
+5020000;502000;Acciones o particip.C/P consideradas pasivos finan;502000;Acciones o participaciones a corto plazo consideradas como pasivos financieros
+5050000;505000;Deudas represent.en otros valores negociables C/P;505000;Deudas representadas en otros valores negociables a corto plazo
+5060000;506000;Intereses C/P empréstitos y emisiones análogas ;506000;Intereses a corto plazo de empréstitos y otras emisiones análogas
+5070000;507000;Dividendos accion/partic.consideradas pasivos fina;507000;Dividendos de acciones o participaciones consideradas como pasivos financieros
+5090000;509000;Obligaciones y bonos amortizados;509000;Obligaciones y bonos amortizados
+5095000;509500;Otros valores negociables amortizados;509500;Otros valores negociables amortizados
+5103000;510300;Deudas a C/P con entidades de crédito, grupo;510300;Deudas a corto plazo con entidades de crédito, empresas del grupo
+5104000;510400;Deudas a C/P con entidades de crédito, asoc.;510400;Deudas a corto plazo con entidades de crédito, empresas asociadas
+5105000;510500;Deudas C/P con otras entidades de crédito vincul.;510500;Deudas a corto plazo con otras entidades de crédito vinculadas
+5113000;511300;Proveedores de inmovilizado a C/P, grupo;511300;Proveedores de inmovilizado a corto plazo, empresas del grupo
+5114000;511400;Proveedores de inmovilizado a C/P, asoc.;511400;Proveedores de inmovilizado a corto plazo, empresas asociadas
+5115000;511500;Proveedores de inmovilizado a C/P, otras vinc.;511500;Proveedores de inmovilizado a corto plazo, otras partes vinculadas
+5123000;512300;Acreedores por arrendamiento financiero C/P, grupo;512300;Acreedores por arrendamiento financiero a corto plazo, empresas del grupo
+5124000;512400;Acreedores por arrendamiento financiero C/P, asoc.;512400;Acreedores por arrendamiento financiero a corto plazo, empresas asociadas
+5125000;512500;Acreedores por arrendamiento financ., otras vinc.;512500;Acreedores por arrendamiento financiero a corto plazo, otras partes vinculadas
+5133000;513300;Otras deudas a C/P con empresas del grupo;513300;Otras deudas a corto plazo con empresas del grupo
+5134000;513400;Otras deudas a C/P con empresas asoc.;513400;Otras deudas a corto plazo con empresas asociadas
+5135000;513500;Otras deudas a C/P con otras partes vinc.;513500;Otras deudas a corto plazo con otras partes vinculadas
+5143000;514300;Intereses a C/P de deudas, empresas del grupo;514300;Intereses a corto plazo de deudas con empresas del grupo
+5144000;514400;Intereses a C/P de deudas, empresas asociadas;514400;Intereses a corto plazo de deudas con empresas asociadas
+5145000;514500;Intereses a C/P de deudas, otras partes vinculadas;514500;Intereses a corto plazo de deudas con otras partes vinculadas
+5200000;520000;Préstamos a C/P de entidades de crédito;520000;Préstamos a corto plazo de entidades de crédito
+5201000;520100;Deudas a C/P por crédito dispuesto;520100;Deudas a corto plazo por crédito dispuesto
+5208000;520800;Deudas por efectos descontados;520800;Deudas por efectos descontados
+5209000;520900;"Deudas por operaciones de ""factoring""";520900;Deudas por operaciones de “factoring”
+5210000;521000;Deudas a C/P;521000;Deudas a corto plazo
+5220000;522000;Deudas C/P transf.subvenciones, donaciones y leg;522000;Deudas a corto plazo transformables en subvenciones, donaciones y legados
+5230000;523000;Proveedores de inmovilizado a C/P;523000;Proveedores de inmovilizado a corto plazo
+5240000;524000;Acreedores por arrendamiento financiero a C/P;524000;Acreedores por arrendamiento financiero a corto plazo
+5250000;525000;Efectos a pagar a C/P;525000;Efectos a pagar a corto plazo
+5260000;526000;Dividendo activo a pagar;526000;Dividendo activo a pagar
+5270000;527000;Intereses a C/P de deudas entidades de crédito;527000;Intereses a corto plazo de deudas con entidades de crédito
+5280000;528000;Intereses a C/P de deudas;528000;Intereses a corto plazo de deudas
+5291000;529100;Provisión a C/P para impuestos;529100;Provisión a corto plazo para impuestos
+5292000;529200;Provisión a C/P para otras responsabilidades;529200;Provisión a corto plazo para otras responsabilidades
+5293000;529300;Provisión C/P desmantelamiento,retiro o rehab.inmo;529300;Provisión a corto plazo por desmantelamiento, retiro o rehabilitación del inmovilizado
+5295000;529500;Provisión a C/P para actuaciones medioambientales;529500;Provisión a corto plazo para actuaciones medioambientales
+5299000;529900;Provisiones a C/P Dº de emisión GEI;;
+5303000;530300;Participaciones a C/P, en grupo;530300;Participaciones a corto plazo en empresas del grupo
+5304000;530400;Participaciones a C/P, en asoc.;530400;Participaciones a corto plazo en empresas asociadas
+5305000;530500;Participaciones a C/P, en otras vinc.;530500;Participaciones a corto plazo en otras partes vinculadas
+5313000;531300;Valores representativos deuda a C/P de grupo;531300;Valores representativos de deuda a corto plazo de empresas del grupo
+5314000;531400;Valores representativos deuda a C/P de asoc.;531400;Valores representativos de deuda a corto plazo de empresas asociadas
+5315000;531500;Valores representativos deuda a C/P de otras vinc.;531500;Valores representativos de deuda a corto plazo de otras partes vinculadas
+5323000;532300;Créditos a C/P a empresas grupo;532300;Créditos a corto plazo a empresas del grupo
+5324000;532400;Créditos a C/P a empresas asoc.;532400;Créditos a corto plazo a empresas asociadas
+5325000;532500;Créditos a C/P a otras partes vinc.;532500;Créditos a corto plazo a otras partes vinculadas
+5333000;533300;Intereses C/P de valores represent.deuda, grupo;533300;Intereses a corto plazo de valores representativos de deuda de empresas del grupo
+5334000;533400;Intereses C/P de valores represent.deuda, asoc.;533400;Intereses a corto plazo de valores representativos de deuda de empresas asociadas
+5335000;533500;Intereses C/P de valores represent.deuda, ot.vinc.;533500;Intereses a corto plazo de valores representativos de deuda de otras partes vinculadas
+5343000;534300;Intereses a C/P de créditos a empresas del grupo;534300;Intereses a corto plazo de créditos a empresas del grupo
+5344000;534400;Intereses a C/P de créditos a empresas asociadas;534400;Intereses a corto plazo de créditos a empresas asociadas
+5345000;534500;Intereses a C/P de créditos a otras partes vinc.;534500;Intereses a corto plazo de créditos a otras partes vinculadas
+5353000;535300;Dividendo a cobrar de empresas de grupo;535300;Dividendo a cobrar de inversiones financieras en empresas del grupo
+5354000;535400;Dividendo a cobrar de empresas asociadas;535400;Dividendo a cobrar de inversiones financieras en empresas asociadas
+5355000;535500;Dividendo a cobrar de otras partes vinculadas;535500;Dividendo a cobrar de inversiones financieras en otras partes vinculadas
+5393000;539300;Desembolsos pdtes. s/participaciones C/P, grupo;539300;Desembolsos pendientes sobre participaciones a corto plazo en empresas del grupo
+5394000;539400;Desembolsos pdtes.s/partic.C/P, empresas asoc.;539400;Desembolsos pendientes sobre participaciones a corto plazo en empresas asociadas
+5395000;539500;Desembolsos pdtes.s/partic.C/P, otras partes vinc.;539500;Desembolsos pendientes sobre participaciones a corto plazo en otras partes vinculadas
+5400000;540000;Inversiones fin.C/P en instrumentos de patrimonio;540000;Inversiones financieras a corto plazo en instrumentos de patrimonio
+5410000;541000;valores representativos deuda a C/P;541000;Valores representativos de deuda a corto plazo
+5420000;542000;Créditos a C/P;542000;Créditos a corto plazo
+5430000;543000;Créditos a C/P por enajenación de inmovilizado;543000;Créditos a corto plazo por enajenación de inmovilizado
+5440000;544000;Créditos a C/P al personal;544000;Créditos a corto plazo al personal
+5450000;545000;Dividendo a cobrar;545000;Dividendo a cobrar
+5460000;546000;Intereses a C/P de valores representativos deudas;546000;Intereses a corto plazo de valores representativos de deudas
+5470000;547000;Intereses a C/P de créditos;547000;Intereses a corto plazo de créditos
+5480000;548000;Imposiciones a C/P;548000;Imposiciones a corto plazo
+5490000;549000;Desembolsos pdtes. s/particip. en Patr.Neto a C/P;549000;Desembolsos pendientes sobre participaciones en el patrimonio neto a corto plazo
+5500000;550000;Titular de la explotación;550000;Titular de la explotación
+5510000;551000;CUENTA CORRIENTE CON SOCIOS Y ADMINISTRADORES;551000;Cuenta corriente con socios y administradores
+5523000;552300;Cuenta corriente con empresas del grupo;552300;Cuenta corriente con empresas del grupo
+5524000;552400;Cuenta corriente con empresas asociadas;552400;Cuenta corriente con empresas asociadas
+5525000;552500;Cuenta corriente con otras partes vinculadas;552500;Cuenta corriente con otras partes vinculadas
+5540000;554000;C.C.uniones tempor.de empresas y comunid.de bienes;554000;Cuenta corriente con uniones temporales de empresas y comunidades de bienes
+5550000;555000;Partidas pendientes de aplicación;555000;Partidas pendientes de aplicación
+5563000;556300;Desembolsos exigidos sobre particip., grupo;556300;Desembolsos exigidos sobre participaciones, empresas del grupo
+5564000;556400;Desembolsos exigidos sobre particip., asoc.;556400;Desembolsos exigidos sobre participaciones, empresas asociadas
+5565000;556500;Desembolsos exigidos sobre particip., otras vinc.;556500;Desembolsos exigidos sobre participaciones, otras partes vinculadas
+5566000;556600;Desembolsos exigidos sobre particip.de otras empre;556600;Desembolsos exigidos sobre participaciones de otras empresas
+5570000;557000;Dividendo activo a cuenta;557000;Dividendo activo a cuenta
+5580000;558000;Socios por desembol.exigidos s/accion o part.ordi.;558000;Socios por desembolsos exigidos sobre acciones o participaciones ordinarias
+5585000;558500;Socios por desembol.exigidos s/accion pasivos fin.;558500;Socios por desembolsos exigidos sobre acciones o participaciones consideradas como pasivos financieros
+5590000;559000;Activos por derivados financieros C/P;559000;Activos por derivados financieros a corto plazo, cartera de negociación
+5595000;559500;Pasivos por derivados financieros C/P;559500;Pasivos por derivados financieros a corto plazo, cartera de negociación
+5600000;560000;Fianzas recibidas a C/P;560000;Fianzas recibidas a corto plazo
+5610000;561000;Depósitos recibidos a C/P;561000;Depósitos recibidos a corto plazo
+5650000;565000;Fianzas constituidas a C/P;565000;Fianzas constituidas a corto plazo
+5660000;566000;Depósitos constituidos a C/P;566000;Depósitos constituidos a corto plazo
+5670000;567000;Intereses pagados por anticipado;567000;Intereses pagados por anticipado
+5680000;568000;Intereses cobrados por anticipado;568000;Intereses cobrados por anticipado
+5700000;570000;Caja, euros;570000;Caja, euros
+5710000;571000;Caja, moneda extranjera;571000;Caja, moneda extranjera
+5720000;572000;Bancos e instituciones de crédito c/c vista, euros;572000;Bancos e instituciones de crédito c/c vista, euros
+5720001;572000;KUTXABANK, S.A;572000;Bancos e instituciones de crédito c/c vista, euros
+5730000;573000;Bancos e institucion.crédito c/c vista,moneda extr;573000;Bancos e instituciones de crédito c/c vista, moneda extranjera
+5740000;574000;Bancos e instituc.crédito,cuentas de ahorro,euros;574000;Bancos e instituciones de crédito, cuentas de ahorro, euros
+5750000;575000;Bancos e instituc.crédito ctas.ahorro,moneda extr;575000;Bancos e instituciones de crédito, cuentas de ahorro, moneda extranjera
+5760000;576000;Inversiones a C/P de gran liquidez;576000;Inversiones a corto plazo de gran liquidez
+5933000;593300;Deterioro de valor de participaciones C/P en grupo;593300;Deterioro de valor de participaciones a corto plazo en empresas del grupo
+5934000;593400;Deterioro de valor de participaciones C/P en asoc.;593400;Deterioro de valor de participaciones a corto plazo en empresas asociadas
+5935000;593500;Deterioro valor particip.a C/P otras partes vinc.;593500;Deterioro de valor de participaciones a corto plazo en otras partes vinculadas
+5943000;594300;Deterioro valor de valores repres.deuda C/P grupo;594300;Deterioro de valor de valores representativos de deuda a corto plazo de empresas del grupo
+5944000;594400;Deterioro valor de valores repres.deuda C/P asoc.;594400;Deterioro de valor de valores representativos de deuda a corto plazo de empresas asociadas
+5945000;594500;Deterioro valor de valores rep.deuda C/P ot.vinc.;594500;Deterioro de valor de valores representativos de deuda a corto plazo de otras partes vinculadas
+5953000;595300;Deterioro de valor de créditos a C/P a grupo;595300;Deterioro de valor de créditos a corto plazo a empresas del grupo
+5954000;595400;Deterioro de valor de créditos a C/P a asoc.;595400;Deterioro de valor de créditos a corto plazo a empresas asociadas
+5955000;595500;Deterioro de valor de créditos a C/P a otras vinc.;595500;Deterioro de valor de créditos a corto plazo a otras partes vinculadas
+5970000;597000;Deterioro valor valores representativos deuda C/P;597000;Deterioro de valor de valores representativos de deuda a corto plazo
+5980000;598000;Deterioro de valor de créditos a C/P;598000;Deterioro de valor de créditos a corto plazo
+6000000;600000;Compras de mercaderías;600000;Compras de mercaderías
+6010000;601000;Compras de materias primas;601000;Compras de materias primas
+6020000;602000;Compras de otros aprovisionamientos;602000;Compras de otros aprovisionamientos
+6060000;606000;Descuentos sobre compras pronto pago mercaderías;606000;Descuentos sobre compras por pronto pago de mercaderías
+6061000;606100;Descuentos sobre compras pronto pago, mat.primas;606100;Descuentos sobre compras por pronto pago de materias primas
+6062000;606200;Descuentos sobre compras pronto pago, otros aprov.;606200;Descuentos sobre compras por pronto pago de otros aprovisionamientos
+6070000;607000;Trabajos realizados por otras empresas;607000;Trabajos realizados por otras empresas
+6080000;608000;Devoluciones de compras de mercaderías;608000;Devoluciones de compras de mercaderías
+6081000;608100;Devoluciones de compras de materias primas;608100;Devoluciones de compras de materias primas
+6082000;608200;Devoluciones de compras de otros aprovisionamiento;608200;Devoluciones de compras de otros aprovisionamientos
+6090000;609000;"""Rappels"" por compras de mercaderías";609000;"""Rappels"" por compras de mercaderías"
+6091000;609100;"""Rappels"" por compras de materias primas";609100;"""Rappels"" por compras de materias primas"
+6092000;609200;"""Rappels"" por compras de otros aprovisionamientos";609200;"""Rappels"" por compras de otros aprovisionamientos"
+6100000;610000;Variación de existencias de mercaderías;610000;Variación de existencias de mercaderías
+6110000;611000;Variación de existencias de materias primas;611000;Variación de existencias de materias primas
+6120000;612000;Variación de existencias otros aprovisionamientos;612000;Variación de existencias de otros aprovisionamientos
+6200000;620000;Gastos en investigación y desarrollo del ejercicio;620000;Gastos en investigación y desarrollo del ejercicio
+6210000;621000;Arrendamientos y cánones;621000;Arrendamientos y cánones
+6220000;622000;Reparaciones y conservación;622000;Reparaciones y conservación
+6230000;623000;SERVICIOS DE PROFESIONALES INDEPENDIENTES;623000;Servicios de profesionales independientes
+6240000;624000;Transportes;624000;Transportes
+6250000;625000;Primas de seguros;625000;Primas de seguros
+6260000;626000;SERVICIOS BANCARIOS Y SIMILARES;626000;Servicios bancarios y similares
+6270000;627000;PUBLICIDAD PROPAGANDA Y RELACIONES PUBLICAS;627000;Publicidad, propaganda y relaciones públicas
+6280000;628000;Suministros;628000;Suministros
+6290000;629000;Otros servicios;629000;Otros servicios
+6300000;630000;Impuesto corriente;630000;Impuesto corriente
+6301000;630100;Impuesto diferido;630100;Impuesto diferido
+6310000;631000;Otros tributos;631000;Otros tributos
+6330000;633000;Ajustes negativos en la imposición sobre beneficio;633000;Ajustes negativos en la imposición sobre beneficios
+6341000;634100;Ajustes negativos en IVA de activo corriente;634100;Ajustes negativos en IVA de activo corriente
+6342000;634200;Ajustes negativos en IVA de inversiones;634200;Ajustes negativos en IVA de inversiones
+6360000;636000;Devolución de impuestos;636000;Devolución de impuestos
+6380000;638000;Ajustes positivos en la imposición sobre beneficio;638000;Ajustes positivos en la imposición sobre beneficios
+6391000;639100;Ajustes positivos en IVA de activo corriente;639100;Ajustes positivos en IVA de activo corriente
+6392000;639200;Ajustes positivos en IVA de inversiones;639200;Ajustes positivos en IVA de inversiones
+6400000;640000;Sueldos y salarios;640000;Sueldos y salarios
+6410000;641000;Indemnizaciones;641000;Indemnizaciones
+6420000;642000;Seguridad Social a cargo de la empresa;642000;Seguridad Social a cargo de la empresa
+6490000;649000;Otros gastos sociales;649000;Otros gastos sociales
+6500000;650000;Pérdidas de créditos comerciales incobrables;650000;Pérdidas de créditos comerciales incobrables
+6510000;651000;Beneficio transferido (gestor);651000;Beneficio transferido (gestor)
+6511000;651100;Pérdida soportada (partícipe o asociado no gestor);651100;Pérdida soportada (partícipe o asociado no gestor)
+6580000;658000;Gastos por emisión de gases efecto invernadero;;
+6590000;659000;Otras pérdidas en gestión corriente;659000;Otras pérdidas en gestión corriente
+6600000;660000;Gastos financieros por actualización provisiones;660000;Gastos financieros por actualización de provisiones
+6610000;661000;Intereses de obligaciones y bonos a L/P, grupo;661000;Intereses de obligaciones y bonos, empresas del grupo
+6611000;661100;Intereses de obligaciones y bonos a L/P, asoc.;661100;Intereses de obligaciones y bonos, empresas asociadas
+6612000;661200;Intereses de obligaci. y bonos a L/P, otras vinc.;661200;Intereses de obligaciones y bonos, otras partes vinculadas
+6613000;661300;Intereses de obligaci. y bonos a L/P, otras emp.;661300;Intereses de obligaciones y bonos, otras empresas
+6615000;661500;Intereses de obligaciones y bonos a C/P, grupo;661500;Intereses de obligaciones y bonos a corto plazo, empresas del grupo
+6616000;661600;Intereses de obligaciones y bonos a C/P, asoc.;661600;Intereses de obligaciones y bonos a corto plazo, empresas asociadas
+6617000;661700;Intereses de obligaci. y bonos a C/P, otras vinc.;661700;Intereses de obligaciones y bonos a corto plazo, otras partes vinculadas
+6618000;661800;Intereses de obligaci. y bonos a C/P, otras emp.;661800;Intereses de obligaciones y bonos a corto plazo, otras empresas
+6620000;662000;Intereses de deudas, empresas del grupo;662000;Intereses de deudas, empresas del grupo
+6621000;662100;Intereses de deudas, empresas asociadas;662100;Intereses de deudas, empresas asociadas
+6622000;662200;Intereses de deudas, otras partes vinc.;662200;Intereses de deudas, otras partes vinculadas
+6623000;662300;INTERESES DE DEUDAS CON ENTIDADES DE CREDITO;662300;Intereses de deudas con entidades de crédito
+6624000;662400;Intereses de deudas, otras empresas;662400;Intereses de deudas, otras empresas
+6630000;663000;Pérdidas valorac. activ/pasivos fin.valor razonab.;663000;Pérdidas por valoración de instrumentos financieros por su valor razonable
+6640000;664000;Dividendos de pasivos, empresas grupo;664000;Dividendos de pasivos, empresas del grupo
+6641000;664100;Dividendos de pasivos, empresas asociadas;664100;Dividendos de pasivos, empresas asociadas
+6642000;664200;Dividendos de pasivos, otras partes vinculadas;664200;Dividendos de pasivos, otras partes vinculadas
+6643000;664300;Dividendos de pasivos, otras empresas;664300;Dividendos de pasivos, otras empresas
+6650000;665000;Intereses dto.efectos en entidades crédito grupo;665000;Intereses por descuento de efectos en entidades de crédito del grupo
+6651000;665100;Intereses dto.efectos en entidades crédito asoc.;665100;Intereses por descuento de efectos en entidades de crédito asociadas
+6652000;665200;Intereses dto.efectos otras entidades crédito vinc;665200;Intereses por descuento de efectos en entidades de crédito vinculadas
+6653000;665300;Intereses dto.efectos en otras entidades crédito;665300;Intereses por descuento de efectos en otras entidades de crédito
+6654000;665400;"Intereses oper.""factoring"" entidades crédito grupo";665400;"Intereses por operaciones de ""factoring"" con entidades de crédito del grupo"
+6655000;665500;"Intereses oper.""factoring"" entidades crédito asoc.";665500;"Intereses por operaciones de ""factoring"" con entidades de crédito asociadas"
+6656000;665600;"Intereses oper.""factoring"" entidades crédito vinc.";665600;"Intereses por operaciones de ""factoring"" con entidades de crédito vinculadas"
+6657000;665700;"Intereses oper.""factoring""otras entidades crédito ";665700;"Intereses por operaciones de ""factoring"" con otras entidades de crédito"
+6660000;666000;Pérdidas en particip. y val.repre.deuda  L/P,grupo;666000;Pérdidas en valores representativos de deuda, empresas del grupo
+6661000;666100;Pérdidas en partic. y val.repre.deuda a L/P, asoc.;666100;Pérdidas en valores representativos de deuda, empresas asociadas
+6662000;666200;Pérdidas en partic.y val.rep.deuda L/P,otras vinc.;666200;Pérdidas en valores representativos de deuda, otras partes vinculadas
+6663000;666300;Pérdidas en parti. y val.rep.deuda L/P, otras emp.;666300;Pérdidas en valores representativos de deuda, otras empresas
+6665000;666500;Pérdidas en partic. y val.repre.deuda a C/P, grupo;666500;Pérdidas en valores representativos de deuda a corto plazo, empresas del grupo
+6666000;666600;Pérdidas en partic. y val.repre.deuda a C/P, asoc.;666600;Pérdidas en valores representativos de deuda a corto plazo, empresas asociadas
+6667000;666700;Pérdidas en part. y val.repr.deuda C/P,otras vinc.;666700;Pérdidas en valores representativos de deuda a corto plazo, otras partes vinculadas
+6668000;666800;Pérdidas en part. y val.repr.deuda C/P,otras emp.;666800;Pérdidas en valores representativos de deuda a corto plazo, otras empresas
+6670000;667000;Pérdidas de créditos a L/P, grupo;667000;Pérdidas de créditos, empresas del grupo
+6671000;667100;Pérdidas de créditos a L/P, asoc.;667100;Pérdidas de créditos, empresas asociadas
+6672000;667200;Pérdidas de créditos a L/P, otras vinc.;667200;Pérdidas de créditos, otras partes vinculadas
+6673000;667300;Pérdidas de créditos a L/P, otras emp.;667300;Pérdidas de créditos, otras empresas
+6675000;667500;Pérdidas de créditos a C/P, grupo;667500;Pérdidas de créditos a corto plazo, empresas del grupo
+6676000;667600;Pérdidas de créditos a C/P, asoc.;667600;Pérdidas de créditos a corto plazo, empresas asociadas
+6677000;667700;Pérdidas de créditos a C/P, otras vinc.;667700;Pérdidas de créditos a corto plazo, otras partes vinculadas
+6678000;667800;Pérdidas de créditos a C/P, de otras emp.;667800;Pérdidas de créditos a corto plazo, otras empresas
+6680000;668000;Diferencias negativas de cambio;668000;Diferencias negativas de cambio
+6690000;669000;Otros gastos financieros;669000;Otros gastos financieros
+6700000;670000;Pérdidas procedentes del inmovilizado intangible;670000;Pérdidas procedentes del inmovilizado intangible
+6710000;671000;Pérdidas procedentes del inmovilizado material;671000;Pérdidas procedentes del inmovilizado material
+6720000;672000;Pérdidas procedentes de inversiones inmobiliarias;672000;Pérdidas procedentes de las inversiones inmobiliarias
+6733000;673300;Pérdidas procedentes de participaciones L/P, grupo;673300;Pérdidas procedentes de participaciones en, empresas del grupo
+6734000;673400;Pérdidas procedentes de participaciones L/P, asoc.;673400;Pérdidas procedentes de participaciones, empresas asociadas
+6735000;673500;Pérdidas procedentes de participac. L/P otras vinc;673500;Pérdidas procedentes de participaciones, otras partes vinculadas
+6750000;675000;Pérdidas por operaciones con obligaciones propias;675000;Pérdidas por operaciones con obligaciones propias
+6780000;678000;Gastos excepcionales;678000;Gastos excepcionales
+6800000;680000;Amortización del inmovilizado intangible;680000;Amortización del inmovilizado intangible
+6810000;681000;Amortización del inmovilizado material;681000;Amortización del inmovilizado material
+6820000;682000;Amortización de las inversiones inmobiliarias;682000;Amortización de las inversiones inmobiliarias
+6900000;690000;Pérdidas por deterioro del inmovilizado intangible;690000;Pérdidas por deterioro del inmovilizado intangible
+6907000;690700;Pérdidas por deterioro valor derechos emisión GEI ;;
+6910000;691000;Pérdidas por deterioro del inmovilizado material;691000;Pérdidas por deterioro del inmovilizado material
+6920000;692000;Pérd. deterioro de las inversiones inmobiliarias;692000;Pérdidas por deterioro de las inversiones inmobiliarias
+6930000;693000;Pérd. deterioro prod.terminados y en curso fabric.;693000;Pérdidas por deterioro de productos terminados y en curso de fabricación
+6931000;693100;Pérdidas por deterioro de mercaderías;693100;Pérdidas por deterioro de mercaderías
+6932000;693200;Pérdidas por deterioro de materias primas;693200;Pérdidas por deterioro de materias primas
+6933000;693300;Pérdidas por deterioro de otros aprovisionamientos;693300;Pérdidas por deterioro de otros aprovisionamientos
+6940000;694000;Pérdidas por deterioro créditos operaciones ccial;694000;Pérdidas por deterioro de créditos por operaciones comerciales
+6954000;695400;Dotación a la provisión por contratos onerosos;695400;Dotación a la provisión por contratos onerosos
+6959000;695900;Dotación a la provisión para otras operac.cciales.;695900;Dotación a la provisión para otras operaciones comerciales
+6960000;696000;Pérd.deterioro partic.instr. Patr.Neto a L/P grupo;696000;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto, empresas del grupo
+6961000;696100;Pérd.deterioro partic.instr. Patr.Neto a L/P asoc.;696100;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto, empresas asociadas
+6962000;696200;Pérd.deterioro partic.instr. Patr.Neto L/P ot.vinc;696200;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto, otras partes vinculadas
+6963000;696300;Pérd.deterioro partic.instr. Patr.Neto L/P ot.emp.;696300;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto, otras empresas
+6965000;696500;Pérd.deterioro valores repres.deuda L/P, grupo;696500;Pérdidas por deterioro en valores representativos de deuda, empresas del grupo
+6966000;696600;Pérd. deterioro valores repres.deuda L/P, asoc.;696600;Pérdidas por deterioro en valores representativos de deuda, empresas asociadas
+6967000;696700;Pérdidas deter.valores repres.deuda L/P,otras vinc;696700;Pérdidas por deterioro en valores representativos de deuda, otras partes vinculadas
+6968000;696800;Pérd. deter.en val. repre.deuda a L/P, otras emp.;696800;Pérdidas por deterioro en valores representativos de deuda, otras empresas
+6970000;697000;Pérdidas por deterioro de créditos a L/P, grupo;697000;Pérdidas por deterioro de créditos, empresas del grupo
+6971000;697100;Pérdidas por deterioro de créditos a L/P, asoc.;697100;Pérdidas por deterioro de créditos, empresas asociadas
+6972000;697200;Pérdidas deterioro de créditos a L/P, otras vinc.;697200;Pérdidas por deterioro de créditos, otras partes vinculadas
+6973000;697300;Pérdidas deterioro de créditos a L/P, otras emp.;697300;Pérdidas por deterioro de créditos, otras empresas
+6980000;698000;Pérd. deterioro partic. instr. Pat.Neto C/P, grupo;698000;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas del grupo
+6981000;698100;Pérd. deterioro partic. instr. Pat.Neto C/P, asoc.;698100;Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas asociadas
+6985000;698500;Pérd. deterioro en val.repres.deuda C/P, grupo;698500;Pérdidas por deterioro en valores representativos de deuda a corto plazo, empresas del grupo
+6986000;698600;Pérd. deterioro en val. repres.deuda C/P, asoc.;698600;Pérdidas por deterioro en valores representativos de deuda a corto plazo, empresas asociadas
+6987000;698700;Pérd. deter.en val. repres.deuda C/P, otras vinc.;698700;Pérdidas por deterioro en valores representativos de deuda a corto plazo, otras partes vinculadas
+6988000;698800;Pérd. deter.en val. repres.deuda C/P, otras emp.;698800;Pérdidas por deterioro en valores representativos de deuda a corto plazo, otras empresas
+6990000;699000;Pérdidas por deterioro de créditos a C/P, grupo;699000;Pérdidas por deterioro de créditos a corto plazo, empresas del grupo
+6991000;699100;Pérdidas por deterioro de créditos a C/P, asoc.;699100;Pérdidas por deterioro de créditos a corto plazo, empresas asociadas
+6992000;699200;Pérdidas deterioro de créditos a C/P, otras vinc.;699200;Pérdidas por deterioro de créditos a corto plazo, otras partes vinculadas
+6993000;699300;Pérdidas deterioro de créditos a C/P, otras emp.;699300;Pérdidas por deterioro de créditos a corto plazo, otras empresas
+7000000;700000;Ventas de mercaderías;700000;Ventas de mercaderías en España
+7010000;701000;Ventas de productos terminados;701000;Ventas de productos terminados en España
+7020000;702000;Ventas de productos semiterminados;702000;Ventas de productos semiterminados en España
+7030000;703000;Ventas de subproductos y residuos;703000;Ventas de subproductos y residuos en España
+7040000;704000;Ventas de envases y embalajes;704000;Ventas de envases y embalajes en España
+7050000;705000;Prestaciones de servicios;705000;Prestaciones de servicios en España
+7060000;706000;Descuentos sobre ventas por p.p.de mercaderías;706000;Descuentos sobre ventas por pronto pago de mercaderías
+7061000;706100;Dtos. sobre ventas por p.p. produc.terminados;706100;Descuentos sobre ventas por pronto pago de productos terminados
+7062000;706200;Dtos. sobre ventas por p.p. produc.semiterminados;706200;Descuentos sobre ventas por pronto pago de productos semiterminados
+7063000;706300;Descuentos s/ventas p.pago subproductos y residuos;706300;Descuentos sobre ventas por pronto pago de subproductos y residuos
+7080000;708000;Devoluciones de ventas de mercaderías;708000;Devoluciones de ventas de mercaderías
+7081000;708100;Devoluciones de ventas de productos terminados;708100;Devoluciones de ventas de productos terminados
+7082000;708200;Devoluciones de ventas de productos semiterminados;708200;Devoluciones de ventas de productos semiterminados
+7083000;708300;Devoluciones de ventas de subproductos y residuos;708300;Devoluciones de ventas de subproductos y residuos
+7084000;708400;Devoluciones de ventas de envases y embalajes;708400;Devoluciones de ventas de envases y embalajes
+7090000;709000;"""Rappels"" sobre ventas de mercaderías";709000;"""Rappels"" sobre ventas de mercaderías"
+7091000;709100;"""Rappels"" sobre ventas de productos terminados";709100;"""Rappels"" sobre ventas de productos terminados"
+7092000;709200;"""Rappels"" sobre ventas de productos semiterminados";709200;"""Rappels"" sobre ventas de productos semiterminados"
+7093000;709300;"""Rappels"" sobre ventas de subproductos y residuos";709300;"""Rappels"" sobre ventas de subproductos y residuos"
+7094000;709400;"""Rappels"" sobre ventas de envases y embalajes";709400;"""Rappels"" sobre ventas de envases y embalajes"
+7100000;710000;Variación de existencias de productos en curso;710000;Variación de existencias de productos en curso
+7110000;711000;Variación existencias de productos semiterminados;711000;Variación de existencias de productos semiterminados
+7120000;712000;Variación de existencias de productos terminados;712000;Variación de existencias de productos terminados
+7130000;713000;Variación existencias,subprod,residuos y mat.recup;713000;Variación de existencias de subproductos, residuos y materiales recuperados
+7300000;730000;Trabajos realizados para inmovilizado intangible;730000;Trabajos realizados para el inmovilizado intangible
+7301000;730100;Trabajos realizados para  I.I. Dº emisión GEI;;
+7310000;731000;Trabajos realizados para el inmovilizado material;731000;Trabajos realizados para el inmovilizado material
+7320000;732000;Trabajos realizados en inversiones inmobiliarias;732000;Trabajos realizados en inversiones inmobiliarias
+7330000;733000;Trabajos realizados para inmovilizado mat.en curso;733000;Trabajos realizados para el inmovilizado material en curso
+7400000;740000;Subvenciones,donaciones y legados a la explotación;740000;Subvenciones, donaciones y legados a la explotación
+7460000;746000;Subvenciones,donaciones,legados transfer.Rtdo.ejer;746000;Subvenciones, donaciones y legados de capital transferidos al resultado del ejercicio de carácter no financiero
+7461000;746100;Dº emisión GEI asignados transferidos al Rdo;746100;Subvenciones, donaciones y legados de capital transferidos al resultado del ejercicio de carácter financiero
+7470000;747000;Otras subvenciones,donac.y leg.transfer.a Rtdo.eje;747000;Otras subvenciones, donaciones y legados transferidos al resultado del ejercicio
+7510000;751000;Pérdida transferida (gestor);751000;Pérdida transferido (gestor)
+7511000;751100;Beneficio atribuido (partícipe/asociado no gestor);751100;Beneficio atribuido (partícipe o asociado no gestor)
+7520000;752000;Ingresos por arrendamientos;752000;Ingresos por arrendamientos
+7530000;753000;Ingresos propiedad industrial cedida en explotac.;753000;Ingresos de propiedad industrial cedida en explotación
+7540000;754000;Ingresos por comisiones;754000;Ingresos por comisiones
+7550000;755000;Ingresos por servicios al personal;755000;Ingresos por servicios al personal
+7590000;759000;Ingresos por servicios diversos;759000;Ingresos por servicios diversos
+7600000;760000;Ingresos participaciones instrum.patrimonio, grupo;760000;Ingresos de participaciones en instrumentos de patrimonio, empresas del grupo
+7601000;760100;Ingresos participaciones instrum.patrimonio,asoc.;760100;Ingresos de participaciones en instrumentos de patrimonio, empresas asociadas
+7602000;760200;Ingresos participaciones instrum.patrim.otras vinc;760200;Ingresos de participaciones en instrumentos de patrimonio, otras partes vinculadas
+7603000;760300;Ingresos participaciones instrum.patrim.,otras emp;760300;Ingresos de participaciones en instrumentos de patrimonio, otras empresas
+7610000;761000;Ingresos de valores representativos de deuda,grupo;761000;Ingresos de valores representativos de deuda, empresas del grupo
+7611000;761100;Ingresos de valores representativos de deuda, asoc;761100;Ingresos de valores representativos de deuda, empresas asociadas
+7612000;761200;Ingresos valores representativos deuda,otras vinc;761200;Ingresos de valores representativos de deuda, otras partes vinculadas
+7613000;761300;Ingresos valores representativos deuda,otras empre;761300;Ingresos de valores representativos de deuda, otras empresas
+7620000;762000;Ingresos de créditos a L/P;762000;Ingresos de créditos a largo plazo, empresas del grupo
+7621000;762100;Ingresos de créditos a C/P;762100;Ingresos de créditos a corto plazo, empresas del grupo
+7630000;763000;Benef.valoración acti/pasiv.fin. por valor razonab;763000;Beneficios por valoración de instrumentos financieros por su valor razonable
+7660000;766000;Beneficios en valores repres.deuda L/P, grupo;766000;Beneficios en valores representativos de deuda a largo plazo, empresas del grupo
+7661000;766100;Beneficios en valores repres.deuda a L/P, asoc.;766100;Beneficios en valores representativos de deuda a largo plazo, empresas asociadas
+7662000;766200;Beneficios en valores repres.deuda L/P, otras vinc;766200;Beneficios en valores representativos de deuda a largo plazo, otras partes vinculadas
+7663000;766300;Beneficios partic/val.repres.deuda L/P, otras emp.;766300;Beneficios en valores representativos de deuda a largo plazo, otras empresas
+7665000;766500;Beneficios partic/valores repres.deuda C/P,grupo;766500;Beneficios en valores representativos de deuda a corto plazo, empresas del grupo
+7666000;766600;Beneficios partic/valores repres.deuda C/P, asoc.;766600;Beneficios en valores representativos de deuda a corto plazo, empresas asociadas
+7667000;766700;Beneficios en valores repres.deuda C/P,otras vinc;766700;Beneficios en valores representativos de deuda a corto plazo, otras partes vinculadas
+7668000;766800;Beneficios en valores repres.deuda  C/P, otras emp;766800;Beneficios en valores representativos de deuda a corto plazo, otras empresas
+7680000;768000;Diferencias positivas de cambio;768000;Diferencias positivas de cambio
+7690000;769000;Otros ingresos financieros;769000;Otros ingresos financieros
+7700000;770000;Beneficios procedentes del inmovilizado intangible;770000;Beneficios procedentes del inmovilizado intangible
+7710000;771000;Beneficios procedentes del inmovilizado material;771000;Beneficios procedentes del inmovilizado material
+7720000;772000;Beneficios procedentes de inversiones inmobiliaria;772000;Beneficios procedentes de las inversiones inmobiliarias
+7733000;773300;Beneficios procedentes de particip. a L/P, grupo;773300;Beneficios procedentes de participaciones a largo plazo, empresas del grupo
+7734000;773400;Beneficios procedentes de particip. a L/P, asoc.;773400;Beneficios procedentes de participaciones a largo plazo, empresas asociadas
+7735000;773500;Beneficios procedentes de partic. L/P, otras vinc.;773500;Beneficios procedentes de participaciones a largo plazo, otras partes vinculadas
+7750000;775000;Beneficios operaciones con obligaciones propias;775000;Beneficos por operaciones con obligaciones propias
+7780000;778000;Ingresos excepcionales;778000;Ingresos excepcionales
+7900000;790000;Reversión del deterioro inmovilizado intangible;790000;Reversión del deterioro del inmovilizado intangible
+7910000;791000;Reversión del deterioro del inmovilizado material;791000;Reversión del deterioro del inmovilizado material
+7920000;792000;Reversión del deterioro inversiones inmobiliarias;792000;Reversión del deterioro de las inversiones inmobiliarias
+7930000;793000;Reversión deterioro produc.term. y en curso fabric;793000;Reversión del deterioro de productos terminados y en curso de fabricación
+7931000;793100;Reversión del deterioro de mercaderías;793100;Reversión del deterioro de mercaderías
+7932000;793200;Reversión del deterioro de materias primas;793200;Reversión del deterioro de materias primas
+7933000;793300;Reversión del deterioro otros aprovisionamientos;793300;Reversión del deterioro de otros aprovisionamientos
+7940000;794000;Reversión deterioro créditos operaciones cciales.;794000;Reversión del deterioro de créditos por operaciones comerciales
+7951000;795100;Exceso de provisión para impuestos;795100;Exceso de provisión para impuestos
+7952000;795200;Exceso de provisión para otras responsabilidades;795200;Exceso de provisión para otras responsabilidades
+7954000;795400;Exceso de provisión por operaciones comerciales;;
+7955000;795500;Exceso provisión para actuaciones medioambientales;795500;Exceso de provisión para actuaciones medioambientales
+7960000;796000;Reversión deter.partic.instr. P.Neto a L/P, grupo;796000;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas del grupo
+7961000;796100;Reversión deter.partic.instr. P.Neto a L/P, asoc.;796100;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas asociadas
+7962000;796200;Reversión deter.partic.instr. P.Neto L/P, ot.vinc.;796200;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, otras partes vinculadas
+7963000;796300;Reversión deter.partic.instr. P.Neto L/P, ot.emp.;796300;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, otras empresas
+7965000;796500;Rever.deter. de valores repres.deuda a L/P, grupo;796500;Reversión del deterioro de valores representativos de deuda a largo plazo, empresas del grupo
+7966000;796600;Rever.deter.de valores repres.deuda a L/P, asoc.;796600;Reversión del deterioro de valores representativos de deuda a largo plazo, empresas asociadas
+7967000;796700;Rever.deter.valores repres.deuda a L/P,otras vinc.;796700;Reversión del deterioro de valores representativos de deuda a largo plazo, otras partes vinculadas
+7968000;796800;Rever.deter.valores repres.deuda a L/P,otras emp.;796800;Reversión del deterioro de valores representativos de deuda a largo plazo, otras empresas
+7970000;797000;Reversión del deterioro de créditos a L/P, grupo;797000;Reversión del deterioro de créditos a largo plazo, empresas del grupo
+7971000;797100;Reversión del deterioro de créditos a L/P, asoc.;797100;Reversión del deterioro de créditos a largo plazo, empresas asociadas
+7972000;797200;Reversión del deterioro créditos L/P, otras vinc.;797200;Reversión del deterioro de créditos a largo plazo, otras partes vinculadas
+7973000;797300;Reversión del deterioro créditos a L/P, otras emp.;797300;Reversión del deterioro de créditos a largo plazo, otras empresas
+7980000;798000;Rever.deter. partic. instr.  P.Neto a C/P, grupo;798000;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas del grupo
+7981000;798100;Rever.deter. partic. instr.  P.Neto a C/P, asoc.;798100;Reversión del deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas asociadas
+7985000;798500;Rever.deter. en val. repre.deuda a C/P, grupo;798500;Reversión del deterioro de valores representativos de deuda a corto plazo, empresas del grupo
+7986000;798600;Rever.deter. en val. repre.deuda a C/P, asoc.;798600;Reversión del deterioro de valores representativos de deuda a corto plazo, empresas asociadas
+7987000;798700;Rever.deter. val. repres.deuda a C/P,otras vinc.;798700;Reversión del deterioro de valores representativos de deuda a corto plazo, otras partes vinculadas
+7988000;798800;Rever.deter. val. repres.deuda a C/P,de otras emp.;798800;Reversión del deterioro de valores representativos de deuda a corto plazo, otras empresas
+7990000;799000;Reversión del deterioro de créditos a C/P,grupo;799000;Reversión del deterioro de créditos a corto plazo, empresas del grupo
+7991000;799100;Reversión del deterioro de créditos a C/P, asoc.;799100;Reversión del deterioro de créditos a corto plazo, empresas asociadas
+7992000;799200;Reversión del deterioro créditos C/P, otras vinc.;799200;Reversión del deterioro de créditos a corto plazo, otras partes vinculadas
+7993000;799300;Reversión del deterioro de créditos C/P, otras emp;799300;Reversión del deterioro de créditos a corto plazo, otras empresas

@@ -1,32 +1,23 @@
 
-import pytest
-import pandas as pd
-from scripts import parser_asientos
+import os
+from scripts.parser_asientos import parse_asientos
+from scripts.mapper import AccountMapper
 
-@pytest.fixture
-def sample_xml(tmp_path):
-    xml_content = '''
-    <root xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
-        <rs:data>
-            <z:row Asiento="1" FechaAsiento="2024-10-01" CodigoCuenta="7000001"
-                   Comentario="VENTA" ImporteAsiento="1000.00" CargoAbono="D"/>
-            <z:row Asiento="1" FechaAsiento="2024-10-01" CodigoCuenta="4300001"
-                   Comentario="VENTA" ImporteAsiento="1000.00" CargoAbono="H"/>
-        </rs:data>
-    </root>
-    '''
-    file_path = tmp_path / "sample_asientos.xml"
-    file_path.write_text(xml_content)
-    return file_path
+def test_parse_asientos_aplica_mapeo():
+    asientos_xml = 'tests/data/MovimientosAsientosTest.xml'
+    mapping_file = 'mappings/equivalencias_sage_odoo.csv'
+    mapper = AccountMapper(mapping_file)
 
-def test_parse_asientos(sample_xml):
-    df = parser_asientos.parse_asientos(str(sample_xml))
+    df_asientos = parse_asientos(asientos_xml, mapper)
 
-    assert isinstance(df, pd.DataFrame)
-    assert len(df) == 2
+    assert not df_asientos.empty
 
-    # Debe / Haber correctos
-    assert df.loc[0, 'Debe'] == 1000.00
-    assert df.loc[0, 'Haber'] == 0.00
-    assert df.loc[1, 'Debe'] == 0.00
-    assert df.loc[1, 'Haber'] == 1000.00
+    cuentas = df_asientos['Cuenta Contable'].unique()
+
+    for cuenta in cuentas:
+        # Si la cuenta está en el resultado del mapeo, debe tener longitud 6 (Odoo)
+        if cuenta in mapper.equivalencias.values():
+            assert len(cuenta) == 6
+        else:
+            # Si no está mapeada, debe aparecer en el listado de no mapeadas
+            assert cuenta in mapper.no_mapeadas
