@@ -1,0 +1,55 @@
+name: "Reporte de Bug"
+description: "Reporta un error o comportamiento inesperado"
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - marcosastorgano
+body:
+  - type: markdown
+    attributes:
+      value: |
+        🚨 **¡Gracias por reportar un bug!**  
+        Por favor, rellena los siguientes campos para ayudarnos a reproducir el problema.
+  - type: input
+    id: resumen
+    attributes:
+      label: Resumen breve
+      description: Describe en pocas palabras el problema.
+      placeholder: El parser de asientos no exporta el CSV...
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+      description: Describe el paso a paso para que podamos reproducir el bug.
+      placeholder: |
+        1. Ir al parser.
+        2. Subir el XML.
+        3. Clicar en "Procesar".
+        4. Ver el error...
+    validations:
+      required: true
+  - type: textarea
+    id: comportamiento_esperado
+    attributes:
+      label: Comportamiento esperado
+      description: ¿Qué debería haber pasado?
+      placeholder: Se debería haber exportado el CSV sin errores.
+    validations:
+      required: true
+  - type: dropdown
+    id: severidad
+    attributes:
+      label: Severidad
+      options:
+        - Crítico (rompe el flujo principal)
+        - Alto (afecta funcionalidad importante)
+        - Medio (no bloquea pero molesta)
+        - Bajo (detalle estético o similar)
+      default: 1
+  - type: textarea
+    id: info_adicional
+    attributes:
+      label: Información adicional
+      description: Adjunta logs, capturas o contexto adicional.
