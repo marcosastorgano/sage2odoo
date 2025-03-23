@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Soporte del Proyecto Sage2Odoo
+    url: https://github.com/marcosastorgano/sage2odoo/discussions
+    about: Pregunta o discute temas relacionados con el proyecto aquí.
