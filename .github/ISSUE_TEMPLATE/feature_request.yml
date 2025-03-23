@@ -1,0 +1,35 @@
+name: "Solicitud de Funcionalidad"
+description: "Plantilla para sugerir nuevas funcionalidades o mejoras"
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees:
+  - marcosastorgano
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por contribuir con la evolución del proyecto 🚀
+  - type: input
+    id: titulo
+    attributes:
+      label: Título breve
+      description: ¿Qué quieres que hagamos?
+      placeholder: Nueva funcionalidad para el parser
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción detallada
+      description: Explica el contexto y por qué es importante esta funcionalidad.
+      placeholder: Se necesita ampliar el parser para...
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - Alta
+        - Media
+        - Baja
