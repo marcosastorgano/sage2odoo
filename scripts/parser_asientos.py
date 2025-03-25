@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import os
 from scripts.mapper import AccountMapper
+from datetime import datetime
 
 def parse_asientos(xml_path, mapper):
     tree = ET.parse(xml_path)
@@ -15,8 +16,16 @@ def parse_asientos(xml_path, mapper):
         cargo_abono = row.attrib.get('CargoAbono', '').strip().upper()
         codigo_sage = row.attrib.get('CodigoCuenta')
 
+        # Formatear fecha como YYYY-MM-DD
+        fecha_raw = row.attrib.get('FechaAsiento', '')
+        fecha_formateada = (
+            datetime.strptime(fecha_raw, "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d")
+            if fecha_raw
+            else ''
+        )
+
         asiento = {
-            'Fecha': row.attrib.get('FechaAsiento'),
+            'Fecha': fecha_formateada,
             'Asiento': row.attrib.get('Asiento'),
             'Cuenta': mapper.map_account(codigo_sage),
             'Etiqueta': row.attrib.get('Comentario'),
