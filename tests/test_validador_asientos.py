@@ -1,6 +1,4 @@
-
 import pandas as pd
-import pytest
 import os
 
 def test_asientos_cuadran():
@@ -10,12 +8,12 @@ def test_asientos_cuadran():
 
     df = pd.read_csv(csv_file, sep=';')
 
-    resumen = df.groupby('Número Asiento').agg({
-        'Debe': 'sum',
-        'Haber': 'sum'
+    resumen = df.groupby('Asiento').agg({
+        'Débito': 'sum',
+        'Crédito': 'sum'
     }).reset_index()
 
-    resumen['Diferencia'] = (resumen['Debe'] - resumen['Haber']).round(2)
+    resumen['Diferencia'] = (resumen['Débito'] - resumen['Crédito']).round(2)
 
     descuadrados = resumen[resumen['Diferencia'] != 0]
 

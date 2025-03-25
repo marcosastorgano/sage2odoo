@@ -1,4 +1,3 @@
-
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
@@ -17,13 +16,13 @@ def parse_asientos(xml_path, mapper):
         codigo_sage = row.attrib.get('CodigoCuenta')
 
         asiento = {
-            'Fecha Asiento': row.attrib.get('FechaAsiento'),
-            'Número Asiento': row.attrib.get('Asiento'),
-            'Cuenta Contable': mapper.map_account(codigo_sage),
-            'Descripción': row.attrib.get('Comentario'),
-            'Debe': importe if cargo_abono == 'D' else 0.0,
-            'Haber': importe if cargo_abono == 'H' else 0.0,
-            'Centro de Coste': row.attrib.get('CodigoDepartamento', '')
+            'Fecha': row.attrib.get('FechaAsiento'),
+            'Asiento': row.attrib.get('Asiento'),
+            'Cuenta': mapper.map_account(codigo_sage),
+            'Etiqueta': row.attrib.get('Comentario'),
+            'Débito': importe if cargo_abono == 'D' else 0.0,
+            'Crédito': importe if cargo_abono == 'H' else 0.0,
+            'Centro de coste': row.attrib.get('CodigoDepartamento', '')
         }
 
         asientos.append(asiento)
@@ -33,18 +32,18 @@ def parse_asientos(xml_path, mapper):
     return df_asientos
 
 def run_parser(asientos_path, output_folder, output_file_name='asientos_odoo.csv'):
-    # Cargamos el mapper de cuentas contables
+    # Cargar el mapper de cuentas contables
     mapping_file = os.path.join('mappings', 'equivalencias_sage_odoo.csv')
     mapper = AccountMapper(mapping_file)
 
     df_asientos = parse_asientos(asientos_path, mapper)
 
-    # Exportamos el CSV de asientos
+    # Exportar el CSV de asientos contables
     output_file = os.path.join(output_folder, output_file_name)
     df_asientos.to_csv(output_file, sep=';', index=False, encoding='utf-8')
     print(f"Exportado CSV a: {output_file}")
 
-    # Exportamos el informe de cuentas no mapeadas
+    # Exportar informe de cuentas no mapeadas
     reportes_folder = os.path.join(output_folder, 'reportes')
     os.makedirs(reportes_folder, exist_ok=True)
 
