@@ -3,6 +3,15 @@ import pandas as pd
 import os
 from datetime import datetime
 
+def parse_fecha(fecha_raw):
+    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
+    for fmt in formatos:
+        try:
+            return datetime.strptime(fecha_raw, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    raise ValueError(f"Formato de fecha no reconocido: {fecha_raw}")
+
 def parse_facturas(xml_path):
     tree = ET.parse(xml_path)
     root = tree.getroot()
@@ -11,13 +20,8 @@ def parse_facturas(xml_path):
     facturas = []
 
     for row in data_node:
-        # Formatear fecha como YYYY-MM-DD
         fecha_raw = row.attrib.get('FechaFactura', '')
-        fecha_formateada = (
-            datetime.strptime(fecha_raw, "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d")
-            if fecha_raw
-            else ''
-        )
+        fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
 
         factura = {
             'Número Factura': row.attrib.get('NumeroFactura', ''),

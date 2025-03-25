@@ -4,6 +4,15 @@ import os
 from scripts.mapper import AccountMapper
 from datetime import datetime
 
+
+def parse_fecha(fecha_raw):
+    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
+    for fmt in formatos:
+        try:
+            return datetime.strptime(fecha_raw, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    raise ValueError(f"Formato de fecha no reconocido: {fecha_raw}")
 def parse_asientos(xml_path, mapper):
     tree = ET.parse(xml_path)
     root = tree.getroot()
@@ -17,22 +26,17 @@ def parse_asientos(xml_path, mapper):
         codigo_sage = row.attrib.get('CodigoCuenta')
 
         # Formatear fecha como YYYY-MM-DD
-        fecha_raw = row.attrib.get('FechaAsiento', '')
-        fecha_formateada = (
-            datetime.strptime(fecha_raw, "%Y-%m-%dT%H:%M:%S").strftime("%Y-%m-%d")
-            if fecha_raw
-            else ''
-        )
-
+        fecha_raw = row.attrib.get('FechaApunte', '')
+        fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
         asiento = {
-            'Fecha': fecha_formateada,
-            'Asiento': row.attrib.get('Asiento'),
-            'Cuenta': mapper.map_account(codigo_sage),
-            'Etiqueta': row.attrib.get('Comentario'),
-            'Débito': importe if cargo_abono == 'D' else 0.0,
-            'Crédito': importe if cargo_abono == 'H' else 0.0,
-            'Centro de coste': row.attrib.get('CodigoDepartamento', '')
-        }
+                'Fecha': fecha_formateada,
+                'Asiento': row.attrib.get('Asiento'),
+                'Cuenta': mapper.map_account(codigo_sage),
+                'Etiqueta': row.attrib.get('Comentario'),
+                'Débito': importe if cargo_abono == 'D' else 0.0,
+                'Crédito': importe if cargo_abono == 'H' else 0.0,
+                'Centro de coste': row.attrib.get('CodigoDepartamento', '')
+                }
 
         asientos.append(asiento)
 
