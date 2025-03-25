@@ -1,4 +1,3 @@
-
 import os
 from scripts.parser_asientos import parse_asientos
 from scripts.mapper import AccountMapper
@@ -12,12 +11,24 @@ def test_parse_asientos_aplica_mapeo():
 
     assert not df_asientos.empty
 
-    cuentas = df_asientos['Cuenta Contable'].unique()
+    # Comprobamos que todas las columnas esperadas existen
+    columnas_esperadas = [
+        'Fecha',
+        'Asiento',
+        'Cuenta',
+        'Etiqueta',
+        'Débito',
+        'Crédito',
+        'Centro de coste'
+    ]
 
+    for columna in columnas_esperadas:
+        assert columna in df_asientos.columns, f"Falta la columna esperada: {columna}"
+
+    # Validamos que las cuentas están mapeadas correctamente
+    cuentas = df_asientos['Cuenta'].unique()
     for cuenta in cuentas:
-        # Si la cuenta está en el resultado del mapeo, debe tener longitud 6 (Odoo)
         if cuenta in mapper.equivalencias.values():
             assert len(cuenta) == 6
         else:
-            # Si no está mapeada, debe aparecer en el listado de no mapeadas
             assert cuenta in mapper.no_mapeadas
