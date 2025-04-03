@@ -48,7 +48,7 @@ def parse_asientos(xml_path, mapper):
             journal = 'Ajustes Manuales'
 
         asiento = {
-            'id': '',  # Identificador interno del asiento
+            'id': row.attrib.get('Asiento', ''),  # Usamos ref como id para agrupar líneas en el asiento
             'ref': row.attrib.get('Asiento', ''),  # Referencia del asiento
             'date': fecha_formateada,  # Fecha del asiento
             'journal_id': journal,  # Libro diario asociado
@@ -64,7 +64,9 @@ def parse_asientos(xml_path, mapper):
     df_asientos = pd.DataFrame(asientos)
 
     # Reordenar los asientos para que los de mismo ref estén juntos
-    df_asientos.sort_values(by=["ref", "journal_id", "date"], inplace=True)
+    df_asientos["max_importe"] = df_asientos[["line_ids/debit", "line_ids/credit"]].max(axis=1)
+    df_asientos.sort_values(by=["ref", "journal_id", "max_importe"], ascending=[True, True, False], inplace=True)
+    df_asientos.drop(columns=["max_importe"], inplace=True)
 
     return df_asientos
 

@@ -30,5 +30,13 @@ def test_orden_asientos_por_ref_journal_fecha():
     df_asientos = parser_asientos.parse_asientos(xml_prueba, mapeador_dummy)
 
     # Verificar orden
-    ordenado = df_asientos.sort_values(by=["ref", "journal_id", "date"]).reset_index(drop=True)
-    assert df_asientos.reset_index(drop=True).equals(ordenado), "Los asientos no están correctamente ordenados"
+    ordenado = (
+        df_asientos.assign(
+            max_importe=lambda df: df[["line_ids/debit", "line_ids/credit"]].max(axis=1)
+        )
+        .sort_values(by=["ref", "journal_id", "max_importe"], ascending=[True, True, False])
+        .drop(columns=["max_importe"])
+        .reset_index(drop=True)
+    )
+    for i, (i1, i2) in enumerate(zip(df_asientos.reset_index(drop=True).to_dict(orient="records"), ordenado.to_dict(orient="records"))):
+        assert i1 == i2, f"Diferencia en la fila {i}: \nEsperado: {i2}\nObtenido: {i1}"
