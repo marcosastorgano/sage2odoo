@@ -6,13 +6,20 @@ from datetime import datetime
 
 
 def parse_fecha(fecha_raw):
-    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
+    """
+    Intenta convertir una fecha en formato válido (YYYY-MM-DD).
+    Si no se reconoce el formato, devuelve una cadena vacía.
+    """
+    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y"]
     for fmt in formatos:
         try:
             return datetime.strptime(fecha_raw, fmt).strftime("%Y-%m-%d")
         except ValueError:
             continue
-    raise ValueError(f"Formato de fecha no reconocido: {fecha_raw}")
+    print(f"Advertencia: Formato de fecha no reconocido: {fecha_raw}")
+    return ''  # Devuelve una cadena vacía si no se reconoce el formato
+
+
 def parse_asientos(xml_path, mapper):
     tree = ET.parse(xml_path)
     root = tree.getroot()
@@ -26,23 +33,41 @@ def parse_asientos(xml_path, mapper):
         codigo_sage = row.attrib.get('CodigoCuenta')
 
         # Formatear fecha como YYYY-MM-DD
-        fecha_raw = row.attrib.get('FechaApunte', '')
+        fecha_raw = row.attrib.get('FechaAsiento', '')
+        print(f"Depuración: Fecha cruda extraída: {fecha_raw}")  # Agregar mensaje de depuración
         fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
+
+        # Determinar el diario según la cuenta contable
+        if codigo_sage.startswith('6') or codigo_sage.startswith('7'):
+            journal = 'Facturas de proveedores'
+        elif codigo_sage.startswith('57') or codigo_sage.startswith('55'):
+            journal = 'Banco'
+        elif codigo_sage.startswith('1') or codigo_sage.startswith('129'):
+            journal = 'Operaciones varias'
+        else:
+            journal = 'Ajustes Manuales'
+
         asiento = {
-                'Fecha': fecha_formateada,
-                'Asiento': row.attrib.get('Asiento'),
-                'Cuenta': mapper.map_account(codigo_sage),
-                'Etiqueta': row.attrib.get('Comentario'),
-                'Débito': importe if cargo_abono == 'D' else 0.0,
-                'Crédito': importe if cargo_abono == 'H' else 0.0,
-                'Centro de coste': row.attrib.get('CodigoDepartamento', '')
-                }
+            'id': '',  # Identificador interno del asiento
+            'ref': row.attrib.get('Asiento', ''),  # Referencia del asiento
+            'date': fecha_formateada,  # Fecha del asiento
+            'journal_id': journal,  # Libro diario asociado
+            'apunte contable / cuenta': mapper.map_account(codigo_sage),  # Código de cuenta mapeado
+            'line_ids/partner_id': '',  # Nombre del cliente/proveedor (vacío por defecto)
+            'line_ids/name': row.attrib.get('Comentario', ''),  # Concepto o etiqueta
+            'line_ids/debit': importe if cargo_abono == 'D' else 0.0,  # Importe en el debe
+            'line_ids/credit': importe if cargo_abono == 'H' else 0.0,  # Importe en el haber
+        }
 
         asientos.append(asiento)
 
     df_asientos = pd.DataFrame(asientos)
 
+    # Reordenar los asientos para que los de mismo ref estén juntos
+    df_asientos.sort_values(by=["ref", "journal_id", "date"], inplace=True)
+
     return df_asientos
+
 
 def run_parser(asientos_path, output_folder, output_file_name='asientos_odoo.csv'):
     # Cargar el mapper de cuentas contables
