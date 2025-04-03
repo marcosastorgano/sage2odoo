@@ -1,6 +1,16 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
+from datetime import datetime
+
+def parse_fecha(fecha_raw):
+    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
+    for fmt in formatos:
+        try:
+            return datetime.strptime(fecha_raw, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    raise ValueError(f"Formato de fecha no reconocido: {fecha_raw}")
 
 def parse_facturas(xml_path):
     tree = ET.parse(xml_path)
@@ -10,9 +20,12 @@ def parse_facturas(xml_path):
     facturas = []
 
     for row in data_node:
+        fecha_raw = row.attrib.get('FechaFactura', '')
+        fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
+
         factura = {
             'Número Factura': row.attrib.get('NumeroFactura', ''),
-            'Fecha Factura': row.attrib.get('FechaFactura', ''),
+            'Fecha Factura': fecha_formateada,
             'Cliente': row.attrib.get('CodigoCliente', ''),
             'Base Imponible': row.attrib.get('BaseImponible', '0.0'),
             'IVA': row.attrib.get('IVA', '0.0'),
@@ -28,10 +41,8 @@ def parse_facturas(xml_path):
 
 
 def run_parser(facturas_path, output_folder, facturas_file='MovimientosFacturasTest.xml'):
-    # Ya no concatenamos input_folder aquí porque el path viene completo
     df_facturas = parse_facturas(facturas_path)
 
-    # Usamos el nombre de facturas_file para construir el nombre del CSV de salida
     output_file_name = facturas_file.replace('.xml', '.csv').replace('.XML', '.csv')
     output_file = os.path.join(output_folder, output_file_name)
 
