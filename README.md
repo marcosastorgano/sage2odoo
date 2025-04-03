@@ -1,4 +1,3 @@
-
 # Sage2Odoo
 
 Este proyecto permite convertir datos contables de Sage a Odoo, incluyendo la transformación de facturas y asientos contables, aplicando mapeos de cuentas para asegurar la compatibilidad con el Plan General Contable Español (PGCE) en Odoo.
@@ -7,6 +6,8 @@ Este proyecto permite convertir datos contables de Sage a Odoo, incluyendo la tr
 
 - Parser de facturas desde XML de Sage a CSV compatible con Odoo.
 - Parser de asientos contables desde XML de Sage a CSV compatible con Odoo.
+    - Las líneas se agrupan por asiento.
+    - Solo la primera línea de cada asiento incluye los campos `ref`, `date` y `journal_id` como exige Odoo.
 - Mapeo de códigos de cuentas Sage a Odoo mediante el fichero `mappings/equivalencias_sage_odoo.csv`.
 - Generación automática de informes de cuentas no mapeadas para control y revisión.
 
@@ -17,6 +18,7 @@ Durante el procesamiento de los asientos contables, el sistema aplica un mapeo d
 Si el código Sage **no tiene equivalencia** definida, el proceso:
 - Mantiene el código Sage original en la exportación de asientos.
 - Registra esa cuenta en un informe para revisión manual.
+- Validación automática de que los asientos están cuadrando (debe = haber), mediante test `test_validador_asientos.py`.
 
 ### 📂 Ubicación del informe
 El informe se genera automáticamente en la siguiente ruta:
@@ -42,6 +44,7 @@ Cuenta Sage sin mapeo
 
 ### ⚠️ Notas
 - Las cuentas sin equivalencia **no detienen el proceso**, pero deben gestionarse para mantener la consistencia contable.
+- Por defecto, todos los asientos se asignan al diario "Ajustes Manuales". Puedes modificar esto en `parser_asientos.py` si necesitas asignar diarios según tipo de asiento o cuenta.
 
 ## 🚀 Cómo ejecutar
 
@@ -70,4 +73,3 @@ sage2odoo/
     ├── test_parser_asientos.py
     └── test_validador_asientos.py
 ```
-
