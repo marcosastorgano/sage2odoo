@@ -26,6 +26,7 @@ def parse_asientos(xml_path, mapper):
     data_node = root.find('{urn:schemas-microsoft-com:rowset}data')
 
     asientos = []
+    ref_anterior = None
 
     for row in data_node:
         importe = float(row.attrib.get('ImporteAsiento', 0))
@@ -37,36 +38,26 @@ def parse_asientos(xml_path, mapper):
         print(f"Depuración: Fecha cruda extraída: {fecha_raw}")  # Agregar mensaje de depuración
         fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
 
-        # Determinar el diario según la cuenta contable
-        if codigo_sage.startswith('6') or codigo_sage.startswith('7'):
-            journal = 'Facturas de proveedores'
-        elif codigo_sage.startswith('57') or codigo_sage.startswith('55'):
-            journal = 'Banco'
-        elif codigo_sage.startswith('1') or codigo_sage.startswith('129'):
-            journal = 'Operaciones varias'
-        else:
-            journal = 'Ajustes Manuales'
+        journal = 'Ajustes Manuales'
+
+        ref_actual = row.attrib.get('Asiento', '')
+        nueva_cabecera = ref_actual != ref_anterior
+        ref_anterior = ref_actual
 
         asiento = {
-            'id': row.attrib.get('Asiento', ''),  # Usamos ref como id para agrupar líneas en el asiento
-            'ref': row.attrib.get('Asiento', ''),  # Referencia del asiento
-            'date': fecha_formateada,  # Fecha del asiento
-            'journal_id': journal,  # Libro diario asociado
-            'apunte contable / cuenta': mapper.map_account(codigo_sage),  # Código de cuenta mapeado
-            'line_ids/partner_id': '',  # Nombre del cliente/proveedor (vacío por defecto)
-            'line_ids/name': row.attrib.get('Comentario', ''),  # Concepto o etiqueta
-            'line_ids/debit': importe if cargo_abono == 'D' else 0.0,  # Importe en el debe
-            'line_ids/credit': importe if cargo_abono == 'H' else 0.0,  # Importe en el haber
+            'ref': ref_actual if nueva_cabecera else '',
+            'date': fecha_formateada if nueva_cabecera else '',
+            'journal_id': journal if nueva_cabecera else '',
+            'apunte contable / cuenta': mapper.map_account(codigo_sage),
+            'line_ids/partner_id': '',
+            'line_ids/name': row.attrib.get('Comentario', ''),
+            'line_ids/debit': importe if cargo_abono == 'D' else 0.0,
+            'line_ids/credit': importe if cargo_abono == 'H' else 0.0,
         }
 
         asientos.append(asiento)
 
     df_asientos = pd.DataFrame(asientos)
-
-    # Reordenar los asientos para que los de mismo ref estén juntos
-    df_asientos["max_importe"] = df_asientos[["line_ids/debit", "line_ids/credit"]].max(axis=1)
-    df_asientos.sort_values(by=["ref", "journal_id", "max_importe"], ascending=[True, True, False], inplace=True)
-    df_asientos.drop(columns=["max_importe"], inplace=True)
 
     return df_asientos
 

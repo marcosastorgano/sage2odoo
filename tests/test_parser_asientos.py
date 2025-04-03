@@ -45,7 +45,7 @@ def test_asignacion_journal_por_cuenta():
     # Comprobaciones
     print(asientos)
     diarios = set(asientos['journal_id'])
-    assert "Facturas de proveedores" in set(asientos['journal_id'])
-    assert "Banco" in diarios or "Ajustes Manuales" in diarios  # depende de si detecta correctamente 551 como banco
+    assert "Ajustes Manuales" in diarios
+    assert diarios == {"", "Ajustes Manuales"}
 
     shutil.rmtree(tmpdir)
