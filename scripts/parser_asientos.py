@@ -6,19 +6,27 @@ from datetime import datetime
 
 
 def parse_fecha(fecha_raw):
-    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d"]
+    """
+    Intenta convertir una fecha en formato válido (YYYY-MM-DD).
+    Si no se reconoce el formato, devuelve una cadena vacía.
+    """
+    formatos = ["%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y"]
     for fmt in formatos:
         try:
             return datetime.strptime(fecha_raw, fmt).strftime("%Y-%m-%d")
         except ValueError:
             continue
-    raise ValueError(f"Formato de fecha no reconocido: {fecha_raw}")
+    print(f"Advertencia: Formato de fecha no reconocido: {fecha_raw}")
+    return ''  # Devuelve una cadena vacía si no se reconoce el formato
+
+
 def parse_asientos(xml_path, mapper):
     tree = ET.parse(xml_path)
     root = tree.getroot()
     data_node = root.find('{urn:schemas-microsoft-com:rowset}data')
 
     asientos = []
+    ref_anterior = None
 
     for row in data_node:
         importe = float(row.attrib.get('ImporteAsiento', 0))
@@ -26,23 +34,33 @@ def parse_asientos(xml_path, mapper):
         codigo_sage = row.attrib.get('CodigoCuenta')
 
         # Formatear fecha como YYYY-MM-DD
-        fecha_raw = row.attrib.get('FechaApunte', '')
+        fecha_raw = row.attrib.get('FechaAsiento', '')
+        print(f"Depuración: Fecha cruda extraída: {fecha_raw}")  # Agregar mensaje de depuración
         fecha_formateada = parse_fecha(fecha_raw) if fecha_raw else ''
+
+        journal = 'Ajustes Manuales'
+
+        ref_actual = row.attrib.get('Asiento', '')
+        nueva_cabecera = ref_actual != ref_anterior
+        ref_anterior = ref_actual
+
         asiento = {
-                'Fecha': fecha_formateada,
-                'Asiento': row.attrib.get('Asiento'),
-                'Cuenta': mapper.map_account(codigo_sage),
-                'Etiqueta': row.attrib.get('Comentario'),
-                'Débito': importe if cargo_abono == 'D' else 0.0,
-                'Crédito': importe if cargo_abono == 'H' else 0.0,
-                'Centro de coste': row.attrib.get('CodigoDepartamento', '')
-                }
+            'ref': ref_actual if nueva_cabecera else '',
+            'date': fecha_formateada if nueva_cabecera else '',
+            'journal_id': journal if nueva_cabecera else '',
+            'apunte contable / cuenta': mapper.map_account(codigo_sage),
+            'line_ids/partner_id': '',
+            'line_ids/name': row.attrib.get('Comentario', ''),
+            'line_ids/debit': importe if cargo_abono == 'D' else 0.0,
+            'line_ids/credit': importe if cargo_abono == 'H' else 0.0,
+        }
 
         asientos.append(asiento)
 
     df_asientos = pd.DataFrame(asientos)
 
     return df_asientos
+
 
 def run_parser(asientos_path, output_folder, output_file_name='asientos_odoo.csv'):
     # Cargar el mapper de cuentas contables
